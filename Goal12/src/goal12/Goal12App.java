@@ -15,6 +15,9 @@ public class Goal12App {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+       goal12UI UI = new goal12UI();
+       UI.mainMenu();
     }
     
 }
