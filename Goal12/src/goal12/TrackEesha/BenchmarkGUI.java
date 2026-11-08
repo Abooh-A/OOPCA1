@@ -30,31 +30,47 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleJL = new javax.swing.JPanel();
+        headPNL = new javax.swing.JPanel();
+        titleJL = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
         householdSizeSP = new javax.swing.JSpinner();
         categoryCB = new javax.swing.JComboBox<>();
         compareBTN = new javax.swing.JButton();
         scrollPN = new javax.swing.JScrollPane();
         resultTA = new javax.swing.JTextArea();
+        householdSizeJL = new javax.swing.JLabel();
+        categoryJL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout titleJLLayout = new javax.swing.GroupLayout(titleJL);
-        titleJL.setLayout(titleJLLayout);
-        titleJLLayout.setHorizontalGroup(
-            titleJLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        titleJLLayout.setVerticalGroup(
-            titleJLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        titleJL.setText("household benchmark");
 
         backBTN.setText("back");
         backBTN.addActionListener(this::backBTNActionPerformed);
 
-        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        javax.swing.GroupLayout headPNLLayout = new javax.swing.GroupLayout(headPNL);
+        headPNL.setLayout(headPNLLayout);
+        headPNLLayout.setHorizontalGroup(
+            headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headPNLLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backBTN)
+                    .addComponent(titleJL))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        headPNLLayout.setVerticalGroup(
+            headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headPNLLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(titleJL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(backBTN)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothes", "general", "all categories", " " }));
+        categoryCB.addActionListener(this::categoryCBActionPerformed);
 
         compareBTN.setText("compare");
 
@@ -62,40 +78,45 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         resultTA.setRows(5);
         scrollPN.setViewportView(resultTA);
 
+        householdSizeJL.setText("household size");
+
+        categoryJL.setText("category");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(headPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(scrollPN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(compareBTN)
                     .addComponent(categoryCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backBTN)
-                    .addComponent(householdSizeSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 183, Short.MAX_VALUE))
+                    .addComponent(householdSizeSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(householdSizeJL)
+                    .addComponent(categoryJL))
+                .addGap(0, 157, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(backBTN)
-                        .addGap(39, 39, 39)
+                        .addComponent(householdSizeJL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(householdSizeSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(headPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addComponent(categoryJL)
+                        .addGap(4, 4, 4)
                         .addComponent(categoryCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(compareBTN))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(scrollPN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(scrollPN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 82, Short.MAX_VALUE))
         );
 
@@ -106,6 +127,10 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         this.dispose();
         new TrackMenuGUI().setVisible(true);        
     }//GEN-LAST:event_backBTNActionPerformed
+
+    private void categoryCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_categoryCBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,10 +160,13 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
     private javax.swing.JComboBox<String> categoryCB;
+    private javax.swing.JLabel categoryJL;
     private javax.swing.JButton compareBTN;
+    private javax.swing.JPanel headPNL;
+    private javax.swing.JLabel householdSizeJL;
     private javax.swing.JSpinner householdSizeSP;
     private javax.swing.JTextArea resultTA;
     private javax.swing.JScrollPane scrollPN;
-    private javax.swing.JPanel titleJL;
+    private javax.swing.JLabel titleJL;
     // End of variables declaration//GEN-END:variables
 }
