@@ -17,6 +17,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
      */
     public TrackMenuGUI() {
         initComponents();
+        setSize(900, 700);
         setLocationRelativeTo(null);
     }
 
@@ -37,6 +38,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         titleJL.setText("Track");
 
         backBTN.setText("Main Menu");
@@ -47,20 +49,18 @@ public class TrackMenuGUI extends javax.swing.JFrame {
         headPNLLayout.setHorizontalGroup(
             headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPNLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleJL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(headPNLLayout.createSequentialGroup()
                 .addComponent(backBTN)
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         headPNLLayout.setVerticalGroup(
             headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPNLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleJL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(backBTN)
+                .addGap(34, 34, 34)
+                .addGroup(headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backBTN)
+                    .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -75,14 +75,12 @@ public class TrackMenuGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(headPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(logBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(benchmarkBTN)
                 .addGap(98, 98, 98))
+            .addComponent(headPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +90,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logBTN)
                     .addComponent(benchmarkBTN))
-                .addGap(0, 122, Short.MAX_VALUE))
+                .addGap(0, 75, Short.MAX_VALUE))
         );
 
         pack();

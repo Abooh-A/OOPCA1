@@ -18,6 +18,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
      */
     public BenchmarkGUI() {
         initComponents();
+        setSize(900, 700);
         setLocationRelativeTo(null);
     }
 
