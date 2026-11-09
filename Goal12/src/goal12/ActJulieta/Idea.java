@@ -8,6 +8,6 @@ package goal12.ActJulieta;
  *
  * @author macbook
  */
-public class Idea {
+public class Idea extends EcoAction{
     
 }
