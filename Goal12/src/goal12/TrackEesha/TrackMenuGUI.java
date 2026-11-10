@@ -33,6 +33,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
         headPNL = new javax.swing.JPanel();
         titleJL = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
+        navbar1 = new goal12.Navbar();
         logBTN = new javax.swing.JButton();
         benchmarkBTN = new javax.swing.JButton();
 
@@ -53,11 +54,17 @@ public class TrackMenuGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         headPNLLayout.setVerticalGroup(
             headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPNLLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
+                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBTN)
                     .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -77,7 +84,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(logBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(benchmarkBTN)
                 .addGap(98, 98, 98))
             .addComponent(headPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -90,7 +97,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logBTN)
                     .addComponent(benchmarkBTN))
-                .addGap(0, 75, Short.MAX_VALUE))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
 
         pack();
@@ -141,6 +148,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
     private javax.swing.JButton benchmarkBTN;
     private javax.swing.JPanel headPNL;
     private javax.swing.JButton logBTN;
+    private goal12.Navbar navbar1;
     private javax.swing.JLabel titleJL;
     // End of variables declaration//GEN-END:variables
 }
