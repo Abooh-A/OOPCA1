@@ -26,30 +26,116 @@ public class GoSustainableGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        subtitleSustainableLBL = new javax.swing.JLabel();
+        ideaLBL = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        infoIdeaTA = new javax.swing.JTextArea();
+        stampsRB = new javax.swing.JRadioButton();
+        discountRB = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        coffeesPerWeekTF = new javax.swing.JTextField();
 
-        jLabel1.setText("I'M SUSTAINABLE");
+        subtitleSustainableLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        subtitleSustainableLBL.setText("Sustainable Ideas for your day");
+
+        ideaLBL.setText("Choose a plan");
+        ideaLBL.setPreferredSize(null);
+        ideaLBL.setRequestFocusEnabled(false);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setPreferredSize(null);
+        jComboBox1.setRequestFocusEnabled(false);
+
+        jScrollPane1.setBorder(null);
+
+        infoIdeaTA.setEditable(false);
+        infoIdeaTA.setColumns(20);
+        infoIdeaTA.setLineWrap(true);
+        infoIdeaTA.setRows(3);
+        infoIdeaTA.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        infoIdeaTA.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        infoIdeaTA.setPreferredSize(null);
+        infoIdeaTA.setRequestFocusEnabled(false);
+        jScrollPane1.setViewportView(infoIdeaTA);
+
+        buttonGroup1.add(stampsRB);
+        stampsRB.setText("Stamps for a Free Coffee");
+
+        buttonGroup1.add(discountRB);
+        discountRB.setText("Discount on each Coffee");
+
+        jLabel1.setLabelFor(coffeesPerWeekTF);
+        jLabel1.setText("Coffees for week?");
+
+        coffeesPerWeekTF.addActionListener(this::coffeesPerWeekTFActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jLabel1)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(212, 212, 212)
+                .addComponent(subtitleSustainableLBL)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(stampsRB)
+                            .addComponent(discountRB)
+                            .addComponent(coffeesPerWeekTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(ideaLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(145, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(138, 138, 138))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(subtitleSustainableLBL)
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ideaLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(coffeesPerWeekTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(15, 15, 15)
+                .addComponent(stampsRB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(discountRB)
+                .addContainerGap(206, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void coffeesPerWeekTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coffeesPerWeekTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coffeesPerWeekTFActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField coffeesPerWeekTF;
+    private javax.swing.JRadioButton discountRB;
+    private javax.swing.JLabel ideaLBL;
+    private javax.swing.JTextArea infoIdeaTA;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton stampsRB;
+    private javax.swing.JLabel subtitleSustainableLBL;
     // End of variables declaration//GEN-END:variables
 }
