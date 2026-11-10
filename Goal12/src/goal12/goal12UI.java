@@ -6,7 +6,7 @@ package goal12;
 
 import goal12.ActJulieta.TestClassA;
 import goal12.LearnAbooh.LearnUI;
-import goal12.TrackEesha.TestClassT;
+import goal12.TrackEesha.TrackMenuGUI;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,8 +27,7 @@ public class goal12UI {
                 L.testPrint();
                 break;
             case 2:
-                TestClassT T = new TestClassT();
-                T.testPrint();
+                new TrackMenuGUI().setVisible(true);
                 break;
             case 3:
                 TestClassA A = new TestClassA();
