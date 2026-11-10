@@ -52,7 +52,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
         eircodeTF = new javax.swing.JTextField();
         eircodeLBL = new javax.swing.JLabel();
         nameLBL = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        districtMsgLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +68,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
 
         nameLBL.setText("Name");
 
-        jLabel1.setText("*Indicate District*");
+        districtMsgLBL.setText("*Indicate District*");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +94,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
                             .addComponent(eircodeTF)
                             .addComponent(nameTF))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(districtMsgLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(36, 36, 36))))
         );
         layout.setVerticalGroup(
@@ -112,7 +112,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(eircodeLBL))
-                    .addComponent(jLabel1))
+                    .addComponent(districtMsgLBL))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -168,10 +168,10 @@ public class ActMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel districtMsgLBL;
     private javax.swing.JLabel eircodeLBL;
     private javax.swing.JTextField eircodeTF;
     private javax.swing.JButton goSustainableBTN;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nameLBL;
     private javax.swing.JTextField nameTF;
     private javax.swing.JButton recyclingBTN;
