@@ -4,7 +4,8 @@
  */
 package goal12;
 
-import goal12.ActJulieta.TestClassA;
+//import goal12.ActJulieta.TestClassA;
+import goal12.ActJulieta.ActMenuGUI;
 import goal12.LearnAbooh.LearnUI;
 import goal12.TrackEesha.TestClassT;
 import javax.swing.JOptionPane;
@@ -31,8 +32,10 @@ public class goal12UI {
                 T.testPrint();
                 break;
             case 3:
-                TestClassA A = new TestClassA();
-                A.testPrint();
+                ActMenuGUI actGUI = new ActMenuGUI();
+                actGUI.setVisible(true);
+                // TestClassA A = new TestClassA();
+                // A.testPrint();
                 break;
         }
     }
