@@ -108,7 +108,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         this.dispose();
-        new goal12.goal12GUI();
+        new goal12.Goal12GUI();
     }//GEN-LAST:event_backBTNActionPerformed
 
     /**
