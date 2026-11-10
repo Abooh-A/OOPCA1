@@ -4,6 +4,8 @@
  */
 package goal12.ActJulieta;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author macbook
@@ -12,11 +14,23 @@ public class ActMenuGUI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ActMenuGUI.class.getName());
 
+    private RecyclingGUI recyclingPanel;
+    private GoSustainableGUI sustainablePanel;
+    
     /**
      * Creates new form ActMenuGUI
      */
     public ActMenuGUI() {
         initComponents();
+        
+        recyclingPanel = new RecyclingGUI();
+        sustainablePanel = new GoSustainableGUI();
+        
+        sectionsPanel.setVisible(false);
+        
+        sectionsPanel.add(recyclingPanel, "Recycling TODO");
+        sectionsPanel.add(sustainablePanel, "Go Sustainable");
+        
     }
 
     /**
@@ -30,36 +44,87 @@ public class ActMenuGUI extends javax.swing.JFrame {
 
         recyclingBTN = new javax.swing.JButton();
         goSustainableBTN = new javax.swing.JButton();
+        sectionsPanel = new javax.swing.JPanel();
+        nameTF = new javax.swing.JTextField();
+        eircodeTF = new javax.swing.JTextField();
+        eircodeLBL = new javax.swing.JLabel();
+        nameLBL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         recyclingBTN.setText("Recycling-to-do");
+        recyclingBTN.addActionListener(this::recyclingBTNActionPerformed);
 
         goSustainableBTN.setText("Go Sustainable");
+        goSustainableBTN.addActionListener(this::goSustainableBTNActionPerformed);
+
+        sectionsPanel.setLayout(new java.awt.CardLayout());
+
+        eircodeLBL.setText("Eircode");
+
+        nameLBL.setText("Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sectionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(recyclingBTN)
-                .addGap(50, 50, 50)
-                .addComponent(goSustainableBTN)
-                .addGap(55, 55, 55))
+                .addGap(114, 114, 114)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(recyclingBTN)
+                        .addGap(29, 29, 29)
+                        .addComponent(goSustainableBTN))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameLBL)
+                            .addComponent(eircodeLBL))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nameTF)
+                            .addComponent(eircodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(recyclingBTN)
-                    .addComponent(goSustainableBTN))
-                .addGap(128, 128, 128))
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameLBL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eircodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eircodeLBL))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(goSustainableBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sectionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void recyclingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recyclingBTNActionPerformed
+        // TODO add your handling code here:
+        sectionsPanel.setVisible(true);
+        
+        CardLayout cl = (CardLayout) sectionsPanel.getLayout();
+        cl.show(sectionsPanel, "Recycling TODO");
+        
+    }//GEN-LAST:event_recyclingBTNActionPerformed
+
+    private void goSustainableBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goSustainableBTNActionPerformed
+        // TODO add your handling code here:
+        sectionsPanel.setVisible(true);
+        
+        CardLayout cl = (CardLayout) sectionsPanel.getLayout();
+        cl.show(sectionsPanel, "Go Sustainable");
+    }//GEN-LAST:event_goSustainableBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,7 +152,12 @@ public class ActMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel eircodeLBL;
+    private javax.swing.JTextField eircodeTF;
     private javax.swing.JButton goSustainableBTN;
+    private javax.swing.JLabel nameLBL;
+    private javax.swing.JTextField nameTF;
     private javax.swing.JButton recyclingBTN;
+    private javax.swing.JPanel sectionsPanel;
     // End of variables declaration//GEN-END:variables
 }
