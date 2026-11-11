@@ -24,13 +24,15 @@ public class ActMenuGUI extends javax.swing.JFrame {
         initComponents();
         
         //Decide the same size for everyone
-        setSize(900, 900);
+        setSize(900, 800);
         setLocationRelativeTo(null);
         
         recyclingPanel = new RecyclingGUI();
         sustainablePanel = new GoSustainableGUI();
         
-        sectionsPanel.setVisible(false);
+        scrollArea.setVisible(false);
+        //sectionsPanel.setVisible(false);
+        
         
         sectionsPanel.add(recyclingPanel, "Recycling TODO");
         sectionsPanel.add(sustainablePanel, "Go Sustainable");
@@ -48,7 +50,6 @@ public class ActMenuGUI extends javax.swing.JFrame {
 
         recyclingBTN = new javax.swing.JButton();
         goSustainableBTN = new javax.swing.JButton();
-        sectionsPanel = new javax.swing.JPanel();
         nameTF = new javax.swing.JTextField();
         eircodeTF = new javax.swing.JTextField();
         eircodeLBL = new javax.swing.JLabel();
@@ -56,8 +57,11 @@ public class ActMenuGUI extends javax.swing.JFrame {
         districtMsgLBL = new javax.swing.JLabel();
         navbar1 = new goal12.Navbar();
         saveUserDetailsBTN = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        titleActPNL = new javax.swing.JPanel();
         titleActLBL = new javax.swing.JLabel();
+        scrollArea = new javax.swing.JScrollPane();
+        sectionsPanel = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,8 +71,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
         goSustainableBTN.setText("Go Sustainable");
         goSustainableBTN.addActionListener(this::goSustainableBTNActionPerformed);
 
-        sectionsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        sectionsPanel.setLayout(new java.awt.CardLayout());
+        nameTF.addActionListener(this::nameTFActionPerformed);
 
         eircodeLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         eircodeLBL.setText("Eircode");
@@ -76,42 +79,50 @@ public class ActMenuGUI extends javax.swing.JFrame {
         nameLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nameLBL.setText("Name");
 
-        districtMsgLBL.setText("*Indicate District*");
+        districtMsgLBL.setText("*Indicate District* or *No Dublin*");
 
         saveUserDetailsBTN.setText("Save Details");
         saveUserDetailsBTN.addActionListener(this::saveUserDetailsBTNActionPerformed);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        titleActPNL.setBackground(new java.awt.Color(162, 126, 234));
+        titleActPNL.setForeground(new java.awt.Color(255, 253, 253));
 
-        titleActLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        titleActLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        titleActLBL.setForeground(new java.awt.Color(242, 242, 242));
         titleActLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleActLBL.setText("ACT");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(titleActLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+        javax.swing.GroupLayout titleActPNLLayout = new javax.swing.GroupLayout(titleActPNL);
+        titleActPNL.setLayout(titleActPNLLayout);
+        titleActPNLLayout.setHorizontalGroup(
+            titleActPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titleActPNLLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addComponent(titleActLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
         );
+        titleActPNLLayout.setVerticalGroup(
+            titleActPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titleActPNLLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(titleActLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        scrollArea.setBorder(null);
+
+        sectionsPanel.setAutoscrolls(true);
+        sectionsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        sectionsPanel.setLayout(new java.awt.CardLayout());
+        scrollArea.setViewportView(sectionsPanel);
+        sectionsPanel.getAccessibleContext().setAccessibleDescription("");
+
+        jButton1.setText("Reset Details");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(sectionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(16, 16, 16))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -119,26 +130,33 @@ public class ActMenuGUI extends javax.swing.JFrame {
                         .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(goSustainableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nameLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eircodeLBL, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                            .addComponent(eircodeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eircodeTF)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(saveUserDetailsBTN)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(nameTF))
+                            .addComponent(nameTF, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(eircodeTF, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(districtMsgLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(140, 140, 140))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(districtMsgLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)))
+                .addGap(128, 128, 128))
+            .addComponent(titleActPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(179, 179, 179))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scrollArea)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +164,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titleActPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addGroup(layout.createSequentialGroup()
@@ -163,24 +181,27 @@ public class ActMenuGUI extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(districtMsgLBL)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(goSustainableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                     .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(sectionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+                .addComponent(scrollArea, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
         );
-
-        sectionsPanel.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void recyclingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recyclingBTNActionPerformed
         // TODO add your handling code here:
-        sectionsPanel.setVisible(true);
+        scrollArea.setVisible(true);
+        getContentPane().revalidate();
+        getContentPane().repaint(); 
+        //sectionsPanel.setVisible(true);
         
         CardLayout cl = (CardLayout) sectionsPanel.getLayout();
         cl.show(sectionsPanel, "Recycling TODO");
@@ -189,7 +210,10 @@ public class ActMenuGUI extends javax.swing.JFrame {
 
     private void goSustainableBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goSustainableBTNActionPerformed
         // TODO add your handling code here:
-        sectionsPanel.setVisible(true);
+        scrollArea.setVisible(true);
+        //sectionsPanel.setVisible(true);
+        getContentPane().revalidate(); 
+        getContentPane().repaint(); 
         
         CardLayout cl = (CardLayout) sectionsPanel.getLayout();
         cl.show(sectionsPanel, "Go Sustainable");
@@ -198,6 +222,10 @@ public class ActMenuGUI extends javax.swing.JFrame {
     private void saveUserDetailsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveUserDetailsBTNActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveUserDetailsBTNActionPerformed
+
+    private void nameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,13 +257,15 @@ public class ActMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel eircodeLBL;
     private javax.swing.JTextField eircodeTF;
     private javax.swing.JButton goSustainableBTN;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel nameLBL;
     private javax.swing.JTextField nameTF;
     private goal12.Navbar navbar1;
     private javax.swing.JButton recyclingBTN;
     private javax.swing.JButton saveUserDetailsBTN;
+    private javax.swing.JScrollPane scrollArea;
     private javax.swing.JPanel sectionsPanel;
     private javax.swing.JLabel titleActLBL;
+    private javax.swing.JPanel titleActPNL;
     // End of variables declaration//GEN-END:variables
 }
