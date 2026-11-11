@@ -31,11 +31,11 @@ public class LearnMenuGUI extends javax.swing.JFrame {
         navbar1 = new goal12.Navbar();
         quizBTN = new javax.swing.JButton();
         pledgeBTN = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        submitBTN = new javax.swing.JButton();
         usernameLBL = new javax.swing.JLabel();
         usernameTF = new javax.swing.JTextField();
-        welcomMsgLBL = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        welcomeMsgLBL = new javax.swing.JLabel();
+        titlePNL = new javax.swing.JPanel();
         titleLBL = new javax.swing.JLabel();
         viewScoresBTN = new javax.swing.JButton();
 
@@ -47,31 +47,31 @@ public class LearnMenuGUI extends javax.swing.JFrame {
         pledgeBTN.setText("PLEDGE");
         pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
 
-        jButton1.setText("SUBMIT");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        submitBTN.setText("SUBMIT");
+        submitBTN.addActionListener(this::submitBTNActionPerformed);
 
         usernameLBL.setText("Username");
 
-        welcomMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
-        welcomMsgLBL.setText("Welcome");
+        welcomeMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        welcomeMsgLBL.setText("Welcome");
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        titlePNL.setBackground(new java.awt.Color(204, 255, 255));
 
         titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         titleLBL.setText("LEARN");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout titlePNLLayout = new javax.swing.GroupLayout(titlePNL);
+        titlePNL.setLayout(titlePNLLayout);
+        titlePNLLayout.setHorizontalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePNLLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titleLBL)
                 .addGap(137, 137, 137))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        titlePNLLayout.setVerticalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePNLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titleLBL)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -84,15 +84,15 @@ public class LearnMenuGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titlePNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(usernameLBL)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(submitBTN)
                     .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(welcomMsgLBL))
+                    .addComponent(welcomeMsgLBL))
                 .addGap(59, 59, 59))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,15 +115,15 @@ public class LearnMenuGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titlePNL, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(welcomMsgLBL)
+                .addComponent(welcomeMsgLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(usernameLBL)
                     .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(submitBTN)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(quizBTN)
@@ -144,9 +144,9 @@ public class LearnMenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pledgeBTNActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void submitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_submitBTNActionPerformed
 
     private void viewScoresBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewScoresBTNActionPerformed
         // TODO add your handling code here:
@@ -178,15 +178,15 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
     private goal12.Navbar navbar1;
     private javax.swing.JButton pledgeBTN;
     private javax.swing.JButton quizBTN;
+    private javax.swing.JButton submitBTN;
     private javax.swing.JLabel titleLBL;
+    private javax.swing.JPanel titlePNL;
     private javax.swing.JLabel usernameLBL;
     private javax.swing.JTextField usernameTF;
     private javax.swing.JButton viewScoresBTN;
-    private javax.swing.JLabel welcomMsgLBL;
+    private javax.swing.JLabel welcomeMsgLBL;
     // End of variables declaration//GEN-END:variables
 }
