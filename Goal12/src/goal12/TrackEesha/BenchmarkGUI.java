@@ -21,6 +21,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         setSize(900, 700);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        benchmarkNavBTN.setEnabled(false);
     }
 
     /**
@@ -36,7 +37,9 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         navbar1 = new goal12.Navbar();
         headPNL = new javax.swing.JPanel();
         titleJL = new javax.swing.JLabel();
-        backBTN = new javax.swing.JButton();
+        headBTNPNL = new javax.swing.JPanel();
+        logNavBTN = new javax.swing.JButton();
+        benchmarkNavBTN = new javax.swing.JButton();
         bodyPNL = new javax.swing.JPanel();
         formPNL = new javax.swing.JPanel();
         householdSizeJL = new javax.swing.JLabel();
@@ -54,15 +57,26 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
+        headPNL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         titleJL.setForeground(new java.awt.Color(255, 255, 255));
         titleJL.setText("Track | Household benchmark");
         headPNL.add(titleJL);
 
-        backBTN.setText("back");
-        backBTN.addActionListener(this::backBTNActionPerformed);
-        headPNL.add(backBTN);
+        headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
+        headBTNPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        logNavBTN.setText("log items");
+        logNavBTN.addActionListener(this::logNavBTNActionPerformed);
+        headBTNPNL.add(logNavBTN);
+
+        benchmarkNavBTN.setText("household benchmark");
+        benchmarkNavBTN.addActionListener(this::benchmarkNavBTNActionPerformed);
+        headBTNPNL.add(benchmarkNavBTN);
+
+        headPNL.add(headBTNPNL);
 
         topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
 
@@ -105,14 +119,21 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
-        this.dispose();
-        new TrackMenuGUI().setVisible(true);        
-    }//GEN-LAST:event_backBTNActionPerformed
-
     private void categoryCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_categoryCBActionPerformed
+
+    private void logNavBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logNavBTNActionPerformed
+        // TODO add your handling code here:
+        new LogGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logNavBTNActionPerformed
+
+    private void benchmarkNavBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benchmarkNavBTNActionPerformed
+        // TODO add your handling code here:
+        new BenchmarkGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_benchmarkNavBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,16 +161,18 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBTN;
+    private javax.swing.JButton benchmarkNavBTN;
     private javax.swing.JPanel bodyPNL;
     private javax.swing.JComboBox<String> categoryCB;
     private javax.swing.JLabel categoryJL;
     private javax.swing.JButton compareBTN;
     private javax.swing.JLabel emptyJL;
     private javax.swing.JPanel formPNL;
+    private javax.swing.JPanel headBTNPNL;
     private javax.swing.JPanel headPNL;
     private javax.swing.JLabel householdSizeJL;
     private javax.swing.JSpinner householdSizeSP;
+    private javax.swing.JButton logNavBTN;
     private goal12.Navbar navbar1;
     private javax.swing.JTextArea resultTA;
     private javax.swing.JScrollPane scrollPN;

@@ -30,75 +30,43 @@ public class TrackMenuGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        topPNL = new javax.swing.JPanel();
         headPNL = new javax.swing.JPanel();
         titleJL = new javax.swing.JLabel();
-        backBTN = new javax.swing.JButton();
         navbar1 = new goal12.Navbar();
+        buttonPNL = new javax.swing.JPanel();
         logBTN = new javax.swing.JButton();
         benchmarkBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        topPNL.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
+
+        headPNL.setBackground(new java.awt.Color(0, 102, 0));
+        headPNL.setLayout(new java.awt.BorderLayout());
+
         titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleJL.setForeground(new java.awt.Color(255, 255, 255));
         titleJL.setText("Track");
+        headPNL.add(titleJL, java.awt.BorderLayout.WEST);
 
-        backBTN.setText("Main Menu");
-        backBTN.addActionListener(this::backBTNActionPerformed);
+        navbar1.setBackground(new java.awt.Color(0, 102, 0));
+        headPNL.add(navbar1, java.awt.BorderLayout.EAST);
 
-        javax.swing.GroupLayout headPNLLayout = new javax.swing.GroupLayout(headPNL);
-        headPNL.setLayout(headPNLLayout);
-        headPNLLayout.setHorizontalGroup(
-            headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPNLLayout.createSequentialGroup()
-                .addComponent(backBTN)
-                .addGap(18, 18, 18)
-                .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPNLLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        headPNLLayout.setVerticalGroup(
-            headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPNLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backBTN)
-                    .addComponent(titleJL, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
+        getContentPane().add(headPNL, java.awt.BorderLayout.NORTH);
+
+        buttonPNL.setLayout(new java.awt.GridLayout(2, 1, 0, 20));
 
         logBTN.setText("Log items");
         logBTN.addActionListener(this::logBTNActionPerformed);
+        buttonPNL.add(logBTN);
 
         benchmarkBTN.setText("HouseHold benchmark");
         benchmarkBTN.addActionListener(this::benchmarkBTNActionPerformed);
+        buttonPNL.add(benchmarkBTN);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(logBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(benchmarkBTN)
-                .addGap(98, 98, 98))
-            .addComponent(headPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(headPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logBTN)
-                    .addComponent(benchmarkBTN))
-                .addGap(0, 54, Short.MAX_VALUE))
-        );
+        getContentPane().add(buttonPNL, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,11 +80,6 @@ public class TrackMenuGUI extends javax.swing.JFrame {
         new BenchmarkGUI().setVisible(true);
         this.dispose();        
     }//GEN-LAST:event_benchmarkBTNActionPerformed
-
-    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
-        this.dispose();
-        new goal12.Goal12GUI();
-    }//GEN-LAST:event_backBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,11 +107,12 @@ public class TrackMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBTN;
     private javax.swing.JButton benchmarkBTN;
+    private javax.swing.JPanel buttonPNL;
     private javax.swing.JPanel headPNL;
     private javax.swing.JButton logBTN;
     private goal12.Navbar navbar1;
     private javax.swing.JLabel titleJL;
+    private javax.swing.JPanel topPNL;
     // End of variables declaration//GEN-END:variables
 }

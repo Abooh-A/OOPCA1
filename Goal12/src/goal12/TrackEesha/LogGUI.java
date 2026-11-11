@@ -19,6 +19,7 @@ public class LogGUI extends javax.swing.JFrame {
     public LogGUI() {
         initComponents();
         setSize(900, 700);
+        logNavBTN.setEnabled(false);
         setLocationRelativeTo(null);
     }
 
@@ -35,8 +36,10 @@ public class LogGUI extends javax.swing.JFrame {
         topPNL = new javax.swing.JPanel();
         navbar1 = new goal12.Navbar();
         headPNL = new javax.swing.JPanel();
-        backBTN = new javax.swing.JButton();
         titleJL = new javax.swing.JLabel();
+        headBTNPNL = new javax.swing.JPanel();
+        logNavBTN = new javax.swing.JButton();
+        benchmarkNavBTN = new javax.swing.JButton();
         bodyPNL = new javax.swing.JPanel();
         formPNL = new javax.swing.JPanel();
         categoryJL = new javax.swing.JLabel();
@@ -73,17 +76,26 @@ public class LogGUI extends javax.swing.JFrame {
         topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
-        headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
-        backBTN.setText("Back");
-        backBTN.addActionListener(this::backBTNActionPerformed);
-        headPNL.add(backBTN);
+        headPNL.setLayout(new java.awt.BorderLayout());
 
         titleJL.setBackground(new java.awt.Color(255, 255, 255));
         titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("log items");
-        headPNL.add(titleJL);
+        titleJL.setText("TRACK | LOG ITEMS");
+        headPNL.add(titleJL, java.awt.BorderLayout.WEST);
+
+        headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
+        headBTNPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        logNavBTN.setText("log items");
+        logNavBTN.addActionListener(this::logNavBTNActionPerformed);
+        headBTNPNL.add(logNavBTN);
+
+        benchmarkNavBTN.setText("household benchmark");
+        benchmarkNavBTN.addActionListener(this::benchmarkNavBTNActionPerformed);
+        headBTNPNL.add(benchmarkNavBTN);
+
+        headPNL.add(headBTNPNL, java.awt.BorderLayout.EAST);
 
         topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
 
@@ -190,11 +202,6 @@ public class LogGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
-        this.dispose();
-        new TrackMenuGUI().setVisible(true);
-    }//GEN-LAST:event_backBTNActionPerformed
-
     private void weightTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_weightTFActionPerformed
@@ -218,6 +225,18 @@ public class LogGUI extends javax.swing.JFrame {
     private void dateTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dateTFActionPerformed
+
+    private void logNavBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logNavBTNActionPerformed
+        // TODO add your handling code here:
+        new LogGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logNavBTNActionPerformed
+
+    private void benchmarkNavBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benchmarkNavBTNActionPerformed
+        // TODO add your handling code here:
+        new BenchmarkGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_benchmarkNavBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,7 +266,7 @@ public class LogGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
-    private javax.swing.JButton backBTN;
+    private javax.swing.JButton benchmarkNavBTN;
     private javax.swing.JPanel bodyPNL;
     private javax.swing.JPanel bottomPNL;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -258,10 +277,12 @@ public class LogGUI extends javax.swing.JFrame {
     private javax.swing.JButton deleteBTN;
     private javax.swing.JRadioButton discardedRB;
     private javax.swing.JPanel formPNL;
+    private javax.swing.JPanel headBTNPNL;
     private javax.swing.JPanel headPNL;
     private javax.swing.JComboBox<String> itemTypeCB;
     private javax.swing.JLabel itemTypeJL;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton logNavBTN;
     private javax.swing.JTable logTBL;
     private goal12.Navbar navbar1;
     private javax.swing.JRadioButton newRB;
