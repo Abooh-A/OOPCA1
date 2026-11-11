@@ -4,6 +4,12 @@
  */
 package goal12.LearnAbooh;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author Obaapanin Abooh Agyekum <your.name at your.org>
@@ -17,6 +23,17 @@ public class ScoresGUI extends javax.swing.JFrame {
      */
     public ScoresGUI() {
         initComponents();
+        setSize(900, 700);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        
+        JTableHeader scoresHeader = scoresTBL.getTableHeader();
+        scoresHeader.setFont(scoresHeader.getFont().deriveFont(Font.BOLD, 20f));
+        scoresHeader.setBackground(new Color(0,102,204));
+        scoresHeader.setForeground(Color.white);
+
+        DefaultTableCellRenderer scoresHeaderTableCellRenderer = (DefaultTableCellRenderer) scoresHeader.getDefaultRenderer();
+        scoresHeaderTableCellRenderer.setHorizontalAlignment(JLabel.CENTER);
     }
 
     /**
@@ -27,19 +44,54 @@ public class ScoresGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        learnNavbar1 = new goal12.LearnAbooh.learnNavbar();
-        navbar1 = new goal12.Navbar();
+        titlePNL = new javax.swing.JPanel();
         titleLBL = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        learnNavbar = new goal12.LearnAbooh.learnNavbar();
+        navbar = new goal12.Navbar();
+        contentPNL = new javax.swing.JPanel();
+        scoresTblSP = new javax.swing.JScrollPane();
         scoresTBL = new javax.swing.JTable();
+        controlPNL = new javax.swing.JPanel();
         searchBTN = new javax.swing.JButton();
         deleteBTN = new javax.swing.JButton();
         searchTF = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        titleLBL.setText("GOAL 12: QUIZ SCORES");
+        titlePNL.setBackground(new java.awt.Color(0, 102, 204));
+
+        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        titleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        titleLBL.setText("LEARN - SCORES");
+
+        javax.swing.GroupLayout titlePNLLayout = new javax.swing.GroupLayout(titlePNL);
+        titlePNL.setLayout(titlePNLLayout);
+        titlePNLLayout.setHorizontalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePNLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        titlePNLLayout.setVerticalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(titleLBL)
+                    .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        contentPNL.setBackground(new java.awt.Color(204, 255, 204));
+        contentPNL.setOpaque(false);
+        contentPNL.setLayout(new java.awt.GridBagLayout());
+
+        scoresTblSP.setBackground(new java.awt.Color(0, 102, 204));
 
         scoresTBL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -52,7 +104,19 @@ public class ScoresGUI extends javax.swing.JFrame {
                 "Attempt", "Score"
             }
         ));
-        jScrollPane1.setViewportView(scoresTBL);
+        scoresTblSP.setViewportView(scoresTBL);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
+        contentPNL.add(scoresTblSP, gridBagConstraints);
+
+        controlPNL.setBackground(new java.awt.Color(255, 51, 51));
+        controlPNL.setOpaque(false);
 
         searchBTN.setText("Search Quiz Attempt");
         searchBTN.addActionListener(this::searchBTNActionPerformed);
@@ -62,52 +126,53 @@ public class ScoresGUI extends javax.swing.JFrame {
         searchTF.setText("search");
         searchTF.addActionListener(this::searchTFActionPerformed);
 
+        javax.swing.GroupLayout controlPNLLayout = new javax.swing.GroupLayout(controlPNL);
+        controlPNL.setLayout(controlPNLLayout);
+        controlPNLLayout.setHorizontalGroup(
+            controlPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlPNLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(controlPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deleteBTN))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        controlPNLLayout.setVerticalGroup(
+            controlPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlPNLLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(searchBTN)
+                .addGap(65, 65, 65)
+                .addComponent(deleteBTN)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 20);
+        contentPNL.add(controlPNL, gridBagConstraints);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(learnNavbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(titleLBL)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(deleteBTN)
-                    .addComponent(searchTF))
-                .addGap(16, 16, 16))
+            .addComponent(titlePNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(navbar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contentPNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(learnNavbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(titleLBL)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchBTN)
-                        .addGap(65, 65, 65)
-                        .addComponent(deleteBTN)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(titlePNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contentPNL, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -147,13 +212,16 @@ public class ScoresGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel contentPNL;
+    private javax.swing.JPanel controlPNL;
     private javax.swing.JButton deleteBTN;
-    private javax.swing.JScrollPane jScrollPane1;
-    private goal12.LearnAbooh.learnNavbar learnNavbar1;
-    private goal12.Navbar navbar1;
+    private goal12.LearnAbooh.learnNavbar learnNavbar;
+    private goal12.Navbar navbar;
     private javax.swing.JTable scoresTBL;
+    private javax.swing.JScrollPane scoresTblSP;
     private javax.swing.JButton searchBTN;
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel titleLBL;
+    private javax.swing.JPanel titlePNL;
     // End of variables declaration//GEN-END:variables
 }
