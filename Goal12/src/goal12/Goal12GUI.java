@@ -136,8 +136,7 @@ public class Goal12GUI extends javax.swing.JFrame {
         ActMenuGUI act = new ActMenuGUI();
         act.setVisible(true);
 
-        Window currentFrame = SwingUtilities.getWindowAncestor(this);
-        currentFrame.dispose();
+        this.dispose();
     }//GEN-LAST:event_actBTNActionPerformed
 
     private void trackBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackBTNActionPerformed
@@ -145,8 +144,7 @@ public class Goal12GUI extends javax.swing.JFrame {
         TrackMenuGUI track = new TrackMenuGUI();
         track.setVisible(true);
 
-        Window currentFrame = SwingUtilities.getWindowAncestor(this);
-        currentFrame.dispose();
+        this.dispose();
     }//GEN-LAST:event_trackBTNActionPerformed
 
     private void learnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnBTNActionPerformed
@@ -154,8 +152,7 @@ public class Goal12GUI extends javax.swing.JFrame {
         LearnMenuGUI learn = new LearnMenuGUI();
         learn.setVisible(true);
 
-        Window currentFrame = SwingUtilities.getWindowAncestor(this);
-        currentFrame.dispose();
+        this.dispose();
 
         /*learnBTN.addActionListener(new ActionListener(){
             @Override //the action listener interface requires us to write an abstract method called actionPerformed
