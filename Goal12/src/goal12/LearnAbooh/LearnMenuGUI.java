@@ -17,6 +17,9 @@ public class LearnMenuGUI extends javax.swing.JFrame {
      */
     public LearnMenuGUI() {
         initComponents();
+        setSize(900, 700);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,32 +30,149 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel1 = new javax.swing.JLabel();
+        navbar1 = new goal12.Navbar();
+        titlePNL = new javax.swing.JPanel();
+        titleLBL = new javax.swing.JLabel();
+        contentPNL = new javax.swing.JPanel();
+        welcomeMsgLBL = new javax.swing.JLabel();
+        usernamePNL = new javax.swing.JPanel();
+        usernameLBL = new javax.swing.JLabel();
+        usernameTF = new javax.swing.JTextField();
+        submitBTN = new javax.swing.JButton();
+        navBtnsPNL = new javax.swing.JPanel();
+        quizBTN = new javax.swing.JButton();
+        pledgeBTN = new javax.swing.JButton();
+        viewScoresBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Learn");
+        titlePNL.setBackground(new java.awt.Color(0, 102, 204));
+        titlePNL.setLayout(new java.awt.GridBagLayout());
+
+        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 60)); // NOI18N
+        titleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        titleLBL.setText("LEARN");
+        titlePNL.add(titleLBL, new java.awt.GridBagConstraints());
+
+        contentPNL.setBackground(new java.awt.Color(204, 255, 204));
+        contentPNL.setOpaque(false);
+        contentPNL.setLayout(new java.awt.GridBagLayout());
+
+        welcomeMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
+        welcomeMsgLBL.setForeground(new java.awt.Color(0, 102, 204));
+        welcomeMsgLBL.setText("Welcome");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        contentPNL.add(welcomeMsgLBL, gridBagConstraints);
+
+        usernamePNL.setBackground(new java.awt.Color(204, 0, 102));
+        usernamePNL.setOpaque(false);
+
+        usernameLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        usernameLBL.setText("Username");
+        usernamePNL.add(usernameLBL);
+
+        usernameTF.setColumns(20);
+        usernameTF.setPreferredSize(new java.awt.Dimension(250, 36));
+        usernamePNL.add(usernameTF);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        contentPNL.add(usernamePNL, gridBagConstraints);
+
+        submitBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        submitBTN.setText("SUBMIT");
+        submitBTN.addActionListener(this::submitBTNActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 20, 0);
+        contentPNL.add(submitBTN, gridBagConstraints);
+
+        navBtnsPNL.setBackground(new java.awt.Color(0, 102, 0));
+        navBtnsPNL.setOpaque(false);
+
+        quizBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        quizBTN.setText("QUIZ");
+        quizBTN.setMaximumSize(new java.awt.Dimension(193, 35));
+        quizBTN.setMinimumSize(new java.awt.Dimension(193, 35));
+        quizBTN.setPreferredSize(new java.awt.Dimension(193, 35));
+        quizBTN.addActionListener(this::quizBTNActionPerformed);
+        navBtnsPNL.add(quizBTN);
+
+        pledgeBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        pledgeBTN.setText("PLEDGE");
+        pledgeBTN.setMaximumSize(new java.awt.Dimension(193, 35));
+        pledgeBTN.setMinimumSize(new java.awt.Dimension(193, 35));
+        pledgeBTN.setPreferredSize(new java.awt.Dimension(193, 35));
+        pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
+        navBtnsPNL.add(pledgeBTN);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
+        contentPNL.add(navBtnsPNL, gridBagConstraints);
+
+        viewScoresBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        viewScoresBTN.setText("VIEW SCORES");
+        viewScoresBTN.addActionListener(this::viewScoresBTNActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 4;
+        contentPNL.add(viewScoresBTN, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titlePNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jLabel1)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(contentPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jLabel1)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titlePNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(contentPNL, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(156, 156, 156))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed
+        // TODO add your handling code here:
+        QuizGUI myQuiz = new QuizGUI();
+        myQuiz.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_quizBTNActionPerformed
+
+    private void pledgeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pledgeBTNActionPerformed
+        // TODO add your handling code here:
+        PledgeGUI myPledge = new PledgeGUI();
+        myPledge.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_pledgeBTNActionPerformed
+
+    private void submitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submitBTNActionPerformed
+
+    private void viewScoresBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewScoresBTNActionPerformed
+        // TODO add your handling code here:
+        ScoresGUI myScores = new ScoresGUI();
+        myScores.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewScoresBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,6 +200,18 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel contentPNL;
+    private javax.swing.JPanel navBtnsPNL;
+    private goal12.Navbar navbar1;
+    private javax.swing.JButton pledgeBTN;
+    private javax.swing.JButton quizBTN;
+    private javax.swing.JButton submitBTN;
+    private javax.swing.JLabel titleLBL;
+    private javax.swing.JPanel titlePNL;
+    private javax.swing.JLabel usernameLBL;
+    private javax.swing.JPanel usernamePNL;
+    private javax.swing.JTextField usernameTF;
+    private javax.swing.JButton viewScoresBTN;
+    private javax.swing.JLabel welcomeMsgLBL;
     // End of variables declaration//GEN-END:variables
 }

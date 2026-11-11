@@ -38,42 +38,19 @@ public class Navbar extends javax.swing.JPanel {
 
         homeBTN.setText("HOME");
         homeBTN.addActionListener(this::homeBTNActionPerformed);
+        add(homeBTN);
 
         learnBTN.setText("LEARN");
         learnBTN.addActionListener(this::learnBTNActionPerformed);
+        add(learnBTN);
 
         trackBTN.setText("TRACK");
         trackBTN.addActionListener(this::trackBTNActionPerformed);
+        add(trackBTN);
 
         actBTN.setText("ACT");
         actBTN.addActionListener(this::actBTNActionPerformed);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(homeBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(learnBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(trackBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(actBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(48, 48, 48))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homeBTN)
-                    .addComponent(learnBTN)
-                    .addComponent(trackBTN)
-                    .addComponent(actBTN))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        add(actBTN);
     }// </editor-fold>//GEN-END:initComponents
 
     private void homeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBTNActionPerformed

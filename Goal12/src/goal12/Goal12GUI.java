@@ -4,6 +4,12 @@
  */
 package goal12;
 
+import goal12.ActJulieta.ActMenuGUI;
+import goal12.LearnAbooh.LearnMenuGUI;
+import goal12.TrackEesha.TrackMenuGUI;
+import java.awt.Window;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Obaapanin Abooh Agyekum <your.name at your.org>
@@ -17,6 +23,8 @@ public class Goal12GUI extends javax.swing.JFrame {
      */
     public Goal12GUI() {
         initComponents();
+        setSize(900, 700);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,58 +35,136 @@ public class Goal12GUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
+        homePNL = new javax.swing.JPanel();
         unitedNationsLBL = new javax.swing.JLabel();
         goal12LBL = new javax.swing.JLabel();
         goalDescLBL = new javax.swing.JLabel();
-        navbar1 = new goal12.Navbar();
+        sdgLBL = new javax.swing.JLabel();
+        studNames = new javax.swing.JLabel();
+        navBtnsPNL = new javax.swing.JPanel();
+        learnBTN = new javax.swing.JButton();
+        trackBTN = new javax.swing.JButton();
+        actBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        unitedNationsLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        homePNL.setBackground(new java.awt.Color(204, 255, 204));
+        homePNL.setOpaque(false);
+        homePNL.setLayout(new java.awt.GridBagLayout());
+
+        unitedNationsLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         unitedNationsLBL.setText("United Nations");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        homePNL.add(unitedNationsLBL, gridBagConstraints);
 
-        goal12LBL.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        goal12LBL.setText("Goal 12");
+        goal12LBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        goal12LBL.setText("SDG 12:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(50, 0, 0, 0);
+        homePNL.add(goal12LBL, gridBagConstraints);
 
-        goalDescLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        goalDescLBL.setText("Ensure sustainable consumption and production patterns");
+        goalDescLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        goalDescLBL.setText("Responsible Consumption & Production");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 15, 0);
+        homePNL.add(goalDescLBL, gridBagConstraints);
+
+        sdgLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        sdgLBL.setText("Sustainable Development Goals");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        homePNL.add(sdgLBL, gridBagConstraints);
+
+        studNames.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
+        studNames.setText("Abooh Agyekum 25749691 | Eesha Penkey 25312961 | Julieta Sorrentino 24217115");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 5;
+        homePNL.add(studNames, gridBagConstraints);
+
+        navBtnsPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 80, 5));
+
+        learnBTN.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        learnBTN.setText("LEARN");
+        learnBTN.setMaximumSize(new java.awt.Dimension(200, 60));
+        learnBTN.setMinimumSize(new java.awt.Dimension(200, 60));
+        learnBTN.setPreferredSize(new java.awt.Dimension(200, 60));
+        learnBTN.addActionListener(this::learnBTNActionPerformed);
+        navBtnsPNL.add(learnBTN);
+
+        trackBTN.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        trackBTN.setText("TRACK");
+        trackBTN.setMaximumSize(new java.awt.Dimension(200, 60));
+        trackBTN.setMinimumSize(new java.awt.Dimension(200, 60));
+        trackBTN.setPreferredSize(new java.awt.Dimension(200, 60));
+        trackBTN.addActionListener(this::trackBTNActionPerformed);
+        navBtnsPNL.add(trackBTN);
+
+        actBTN.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        actBTN.setText("ACT");
+        actBTN.setMaximumSize(new java.awt.Dimension(200, 60));
+        actBTN.setMinimumSize(new java.awt.Dimension(200, 60));
+        actBTN.setPreferredSize(new java.awt.Dimension(200, 60));
+        actBTN.addActionListener(this::actBTNActionPerformed);
+        navBtnsPNL.add(actBTN);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 20, 0);
+        homePNL.add(navBtnsPNL, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(goalDescLBL)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(unitedNationsLBL))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(goal12LBL)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(homePNL, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(82, Short.MAX_VALUE)
-                .addComponent(unitedNationsLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(goal12LBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(goalDescLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167))
+            .addComponent(homePNL, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBTNActionPerformed
+        // TODO add your handling code here:
+        ActMenuGUI act = new ActMenuGUI();
+        act.setVisible(true);
+
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
+    }//GEN-LAST:event_actBTNActionPerformed
+
+    private void trackBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackBTNActionPerformed
+        // TODO add your handling code here:
+        TrackMenuGUI track = new TrackMenuGUI();
+        track.setVisible(true);
+
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
+    }//GEN-LAST:event_trackBTNActionPerformed
+
+    private void learnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnBTNActionPerformed
+        // TODO add your handling code here:
+        LearnMenuGUI learn = new LearnMenuGUI();
+        learn.setVisible(true);
+
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
+
+        /*learnBTN.addActionListener(new ActionListener(){
+            @Override //the action listener interface requires us to write an abstract method called actionPerformed
+            public void actionPerformed(ActionEvent ae){
+                dispose();
+            }
+        }*/
+
+    }//GEN-LAST:event_learnBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,9 +192,15 @@ public class Goal12GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actBTN;
     private javax.swing.JLabel goal12LBL;
     private javax.swing.JLabel goalDescLBL;
-    private goal12.Navbar navbar1;
+    private javax.swing.JPanel homePNL;
+    private javax.swing.JButton learnBTN;
+    private javax.swing.JPanel navBtnsPNL;
+    private javax.swing.JLabel sdgLBL;
+    private javax.swing.JLabel studNames;
+    private javax.swing.JButton trackBTN;
     private javax.swing.JLabel unitedNationsLBL;
     // End of variables declaration//GEN-END:variables
 }
