@@ -16,7 +16,7 @@ public class Goal12App {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        goal12GUI homeGUI = new goal12GUI();
+        Goal12GUI homeGUI = new Goal12GUI();
         homeGUI.setVisible(true);
     }
     
