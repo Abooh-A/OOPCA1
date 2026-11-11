@@ -18,14 +18,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="homeBTN" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-              <Component id="learnBTN" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-              <Component id="trackBTN" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-              <Component id="actBTN" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <Component id="homeBTN" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="learnBTN" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="trackBTN" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="actBTN" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
