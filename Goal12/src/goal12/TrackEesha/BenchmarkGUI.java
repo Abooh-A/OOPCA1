@@ -32,6 +32,8 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        topPNL = new javax.swing.JPanel();
+        navbar1 = new goal12.Navbar();
         headPNL = new javax.swing.JPanel();
         titleJL = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
@@ -45,9 +47,11 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         compareBTN = new javax.swing.JButton();
         scrollPN = new javax.swing.JScrollPane();
         resultTA = new javax.swing.JTextArea();
-        navbar1 = new goal12.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        topPNL.setLayout(new java.awt.BorderLayout());
+        topPNL.add(navbar1, java.awt.BorderLayout.PAGE_END);
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
         headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -60,7 +64,9 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         backBTN.addActionListener(this::backBTNActionPerformed);
         headPNL.add(backBTN);
 
-        getContentPane().add(headPNL, java.awt.BorderLayout.NORTH);
+        topPNL.add(headPNL, java.awt.BorderLayout.NORTH);
+
+        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
 
         bodyPNL.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 15, 15));
         bodyPNL.setLayout(new java.awt.BorderLayout());
@@ -93,7 +99,6 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         scrollPN.setViewportView(resultTA);
 
         bodyPNL.add(scrollPN, java.awt.BorderLayout.CENTER);
-        bodyPNL.add(navbar1, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
 
@@ -149,5 +154,6 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea resultTA;
     private javax.swing.JScrollPane scrollPN;
     private javax.swing.JLabel titleJL;
+    private javax.swing.JPanel topPNL;
     // End of variables declaration//GEN-END:variables
 }
