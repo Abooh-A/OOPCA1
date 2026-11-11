@@ -33,24 +33,59 @@ public class PledgeGUI extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         pledgeTypeBG = new javax.swing.ButtonGroup();
+        navbar1 = new goal12.Navbar();
+        titlePNL = new javax.swing.JPanel();
+        titleLBL = new javax.swing.JLabel();
+        learnNavbar = new goal12.LearnAbooh.learnNavbar();
+        jPanel1 = new javax.swing.JPanel();
         pledgeTblSP = new javax.swing.JScrollPane();
         pledgeTBL = new javax.swing.JTable();
-        navbar1 = new goal12.Navbar();
+        controlsPNL = new javax.swing.JPanel();
+        ongoingPlgRB = new javax.swing.JRadioButton();
         pledgeCrteBTN = new javax.swing.JButton();
         searchPlgTF = new javax.swing.JTextField();
         editPlgBTN = new javax.swing.JButton();
         deletePlgBTN = new javax.swing.JButton();
-        titleLBL = new javax.swing.JLabel();
         updateBTN = new javax.swing.JButton();
         searchBTN = new javax.swing.JButton();
         newPledgeTF = new javax.swing.JTextField();
         oneTimePlgRB = new javax.swing.JRadioButton();
-        ongoingPlgRB = new javax.swing.JRadioButton();
-        titlePNL = new javax.swing.JPanel();
-        titleLBL1 = new javax.swing.JLabel();
-        learnNavbar = new goal12.LearnAbooh.learnNavbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        titlePNL.setBackground(new java.awt.Color(0, 102, 204));
+
+        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        titleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        titleLBL.setText("LEARN - PLEDGE");
+
+        javax.swing.GroupLayout titlePNLLayout = new javax.swing.GroupLayout(titlePNL);
+        titlePNL.setLayout(titlePNLLayout);
+        titlePNLLayout.setHorizontalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePNLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        titlePNLLayout.setVerticalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(titleLBL)
+                    .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        pledgeTblSP.setBackground(new java.awt.Color(0, 102, 204));
+        pledgeTblSP.setMinimumSize(new java.awt.Dimension(600, 500));
+        pledgeTblSP.setPreferredSize(new java.awt.Dimension(600, 500));
 
         pledgeTBL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,7 +98,22 @@ public class PledgeGUI extends javax.swing.JFrame {
                 "Pledge", "Type", "Progress"
             }
         ));
+        pledgeTBL.setMinimumSize(new java.awt.Dimension(600, 500));
         pledgeTblSP.setViewportView(pledgeTBL);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
+        jPanel1.add(pledgeTblSP, gridBagConstraints);
+
+        controlsPNL.setBackground(new java.awt.Color(255, 51, 51));
+
+        pledgeTypeBG.add(ongoingPlgRB);
+        ongoingPlgRB.setText("Ongoing Pledge");
 
         pledgeCrteBTN.setText("Create Pledge");
         pledgeCrteBTN.addActionListener(this::pledgeCrteBTNActionPerformed);
@@ -76,46 +126,66 @@ public class PledgeGUI extends javax.swing.JFrame {
 
         deletePlgBTN.setText("Delete Pledge");
 
-        titleLBL.setText("GOAL 12 PLEDGE");
-
         updateBTN.setText("Update Progress");
 
         searchBTN.setText("Search Pledge");
 
         newPledgeTF.setText("New Pledge");
+        newPledgeTF.addActionListener(this::newPledgeTFActionPerformed);
 
         pledgeTypeBG.add(oneTimePlgRB);
         oneTimePlgRB.setText("One Time Pledge");
 
-        pledgeTypeBG.add(ongoingPlgRB);
-        ongoingPlgRB.setText("Ongoing Pledge");
-
-        titlePNL.setBackground(new java.awt.Color(0, 102, 204));
-
-        titleLBL1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        titleLBL1.setForeground(new java.awt.Color(255, 255, 255));
-        titleLBL1.setText("LEARN - PLEDGE");
-
-        javax.swing.GroupLayout titlePNLLayout = new javax.swing.GroupLayout(titlePNL);
-        titlePNL.setLayout(titlePNLLayout);
-        titlePNLLayout.setHorizontalGroup(
-            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(titlePNLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLBL1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        javax.swing.GroupLayout controlsPNLLayout = new javax.swing.GroupLayout(controlsPNL);
+        controlsPNL.setLayout(controlsPNLLayout);
+        controlsPNLLayout.setHorizontalGroup(
+            controlsPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlsPNLLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(controlsPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newPledgeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(controlsPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pledgeCrteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(editPlgBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(deletePlgBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(controlsPNLLayout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addGroup(controlsPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ongoingPlgRB)
+                                .addComponent(oneTimePlgRB)))
+                        .addComponent(searchPlgTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
-        titlePNLLayout.setVerticalGroup(
-            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePNLLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(titleLBL1)
-                    .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+
+        controlsPNLLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deletePlgBTN, editPlgBTN, newPledgeTF, pledgeCrteBTN, searchBTN, searchPlgTF, updateBTN});
+
+        controlsPNLLayout.setVerticalGroup(
+            controlsPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlsPNLLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(newPledgeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(oneTimePlgRB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ongoingPlgRB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pledgeCrteBTN)
+                .addGap(18, 18, 18)
+                .addComponent(searchPlgTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(searchBTN)
+                .addGap(18, 18, 18)
+                .addComponent(editPlgBTN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deletePlgBTN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updateBTN)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        jPanel1.add(controlsPNL, new java.awt.GridBagConstraints());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,65 +193,17 @@ public class PledgeGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(titlePNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(372, 372, 372)
-                        .addComponent(titleLBL))
-                    .addComponent(pledgeTblSP, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pledgeCrteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(editPlgBTN)
-                            .addComponent(deletePlgBTN))
-                        .addComponent(updateBTN, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(searchBTN)
-                    .addComponent(newPledgeTF)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ongoingPlgRB)
-                            .addComponent(oneTimePlgRB)))
-                    .addComponent(searchPlgTF))
-                .addContainerGap(250, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deletePlgBTN, editPlgBTN, newPledgeTF, pledgeCrteBTN, searchBTN, searchPlgTF, updateBTN});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(titlePNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 401, Short.MAX_VALUE)
-                .addComponent(titleLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(newPledgeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(oneTimePlgRB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ongoingPlgRB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pledgeCrteBTN)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchPlgTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchBTN)
-                        .addGap(18, 18, 18)
-                        .addComponent(editPlgBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deletePlgBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(updateBTN))
-                    .addComponent(pledgeTblSP, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(412, 412, 412))
         );
 
         pack();
@@ -198,6 +220,10 @@ public class PledgeGUI extends javax.swing.JFrame {
     private void searchPlgTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPlgTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchPlgTFActionPerformed
+
+    private void newPledgeTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPledgeTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newPledgeTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,8 +253,10 @@ public class PledgeGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPNL;
     private javax.swing.JPanel contentPNL1;
+    private javax.swing.JPanel controlsPNL;
     private javax.swing.JButton deletePlgBTN;
     private javax.swing.JButton editPlgBTN;
+    private javax.swing.JPanel jPanel1;
     private goal12.LearnAbooh.learnNavbar learnNavbar;
     private goal12.Navbar navbar1;
     private javax.swing.JTextField newPledgeTF;
@@ -257,7 +285,6 @@ public class PledgeGUI extends javax.swing.JFrame {
     private javax.swing.JButton searchBTN;
     private javax.swing.JTextField searchPlgTF;
     private javax.swing.JLabel titleLBL;
-    private javax.swing.JLabel titleLBL1;
     private javax.swing.JPanel titlePNL;
     private javax.swing.JButton updateBTN;
     // End of variables declaration//GEN-END:variables
