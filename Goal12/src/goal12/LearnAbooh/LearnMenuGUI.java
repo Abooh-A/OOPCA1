@@ -138,10 +138,16 @@ public class LearnMenuGUI extends javax.swing.JFrame {
 
     private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed
         // TODO add your handling code here:
+        QuizGUI myQuiz = new QuizGUI();
+        myQuiz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_quizBTNActionPerformed
 
     private void pledgeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pledgeBTNActionPerformed
         // TODO add your handling code here:
+        PledgeGUI myPledge = new PledgeGUI();
+        myPledge.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_pledgeBTNActionPerformed
 
     private void submitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBTNActionPerformed
@@ -150,6 +156,9 @@ public class LearnMenuGUI extends javax.swing.JFrame {
 
     private void viewScoresBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewScoresBTNActionPerformed
         // TODO add your handling code here:
+        ScoresGUI myScores = new ScoresGUI();
+        myScores.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_viewScoresBTNActionPerformed
 
     /**

@@ -20,9 +20,9 @@
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Component id="lMenuBTN" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="QUIZ" min="-2" max="-2" attributes="0"/>
+              <Component id="quizBTN" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+              <Component id="pledgeBTN" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -33,8 +33,8 @@
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lMenuBTN" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="QUIZ" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="quizBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pledgeBTN" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -46,19 +46,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="LEARN MENU"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lMenuBTNActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="QUIZ">
+    <Component class="javax.swing.JButton" name="quizBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="QUIZ"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QUIZActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quizBTNActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="pledgeBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="PLEDGE"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pledgeBTNActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

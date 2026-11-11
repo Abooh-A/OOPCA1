@@ -4,6 +4,9 @@
  */
 package goal12.LearnAbooh;
 
+import java.awt.Window;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Obaapanin Abooh Agyekum <your.name at your.org>
@@ -27,15 +30,17 @@ public class learnNavbar extends javax.swing.JPanel {
     private void initComponents() {
 
         lMenuBTN = new javax.swing.JButton();
-        QUIZ = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        quizBTN = new javax.swing.JButton();
+        pledgeBTN = new javax.swing.JButton();
 
         lMenuBTN.setText("LEARN MENU");
+        lMenuBTN.addActionListener(this::lMenuBTNActionPerformed);
 
-        QUIZ.setText("QUIZ");
-        QUIZ.addActionListener(this::QUIZActionPerformed);
+        quizBTN.setText("QUIZ");
+        quizBTN.addActionListener(this::quizBTNActionPerformed);
 
-        jButton3.setText("PLEDGE");
+        pledgeBTN.setText("PLEDGE");
+        pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -45,9 +50,9 @@ public class learnNavbar extends javax.swing.JPanel {
                 .addGap(1, 1, 1)
                 .addComponent(lMenuBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(QUIZ)
+                .addComponent(quizBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(pledgeBTN)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -56,20 +61,46 @@ public class learnNavbar extends javax.swing.JPanel {
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lMenuBTN)
-                    .addComponent(QUIZ)
-                    .addComponent(jButton3))
+                    .addComponent(quizBTN)
+                    .addComponent(pledgeBTN))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void QUIZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QUIZActionPerformed
+    private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_QUIZActionPerformed
+        QuizGUI myQuiz = new QuizGUI();
+        myQuiz.setVisible(true);
+        
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
+                                       
+    }//GEN-LAST:event_quizBTNActionPerformed
+
+    private void lMenuBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lMenuBTNActionPerformed
+        // TODO add your handling code here:
+        LearnMenuGUI myLMenu = new LearnMenuGUI();
+        myLMenu.setVisible(true);
+        
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
+    }//GEN-LAST:event_lMenuBTNActionPerformed
+
+    private void pledgeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pledgeBTNActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        PledgeGUI myPledge = new PledgeGUI();
+        myPledge.setVisible(true);
+        
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
+
+    }//GEN-LAST:event_pledgeBTNActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton QUIZ;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton lMenuBTN;
+    private javax.swing.JButton pledgeBTN;
+    private javax.swing.JButton quizBTN;
     // End of variables declaration//GEN-END:variables
 }
