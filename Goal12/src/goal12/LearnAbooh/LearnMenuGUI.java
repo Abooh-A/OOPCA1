@@ -30,87 +30,109 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         navbar1 = new goal12.Navbar();
-        quizBTN = new javax.swing.JButton();
-        pledgeBTN = new javax.swing.JButton();
-        submitBTN = new javax.swing.JButton();
-        usernameLBL = new javax.swing.JLabel();
-        usernameTF = new javax.swing.JTextField();
-        welcomeMsgLBL = new javax.swing.JLabel();
         titlePNL = new javax.swing.JPanel();
         titleLBL = new javax.swing.JLabel();
+        contentPNL = new javax.swing.JPanel();
+        welcomeMsgLBL = new javax.swing.JLabel();
+        usernamePNL = new javax.swing.JPanel();
+        usernameLBL = new javax.swing.JLabel();
+        usernameTF = new javax.swing.JTextField();
+        submitBTN = new javax.swing.JButton();
+        navBtnsPNL = new javax.swing.JPanel();
+        quizBTN = new javax.swing.JButton();
+        pledgeBTN = new javax.swing.JButton();
         viewScoresBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        quizBTN.setText("QUIZ");
-        quizBTN.addActionListener(this::quizBTNActionPerformed);
+        titlePNL.setBackground(new java.awt.Color(0, 102, 204));
+        titlePNL.setLayout(new java.awt.GridBagLayout());
 
-        pledgeBTN.setText("PLEDGE");
-        pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
+        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 60)); // NOI18N
+        titleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        titleLBL.setText("LEARN");
+        titlePNL.add(titleLBL, new java.awt.GridBagConstraints());
 
+        contentPNL.setBackground(new java.awt.Color(204, 255, 204));
+        contentPNL.setOpaque(false);
+        contentPNL.setLayout(new java.awt.GridBagLayout());
+
+        welcomeMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
+        welcomeMsgLBL.setForeground(new java.awt.Color(0, 102, 204));
+        welcomeMsgLBL.setText("Welcome");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        contentPNL.add(welcomeMsgLBL, gridBagConstraints);
+
+        usernamePNL.setBackground(new java.awt.Color(204, 0, 102));
+        usernamePNL.setOpaque(false);
+
+        usernameLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        usernameLBL.setText("Username");
+        usernamePNL.add(usernameLBL);
+
+        usernameTF.setColumns(20);
+        usernameTF.setPreferredSize(new java.awt.Dimension(250, 36));
+        usernamePNL.add(usernameTF);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        contentPNL.add(usernamePNL, gridBagConstraints);
+
+        submitBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         submitBTN.setText("SUBMIT");
         submitBTN.addActionListener(this::submitBTNActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 20, 0);
+        contentPNL.add(submitBTN, gridBagConstraints);
 
-        usernameLBL.setText("Username");
+        navBtnsPNL.setBackground(new java.awt.Color(0, 102, 0));
+        navBtnsPNL.setOpaque(false);
 
-        welcomeMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
-        welcomeMsgLBL.setText("Welcome");
+        quizBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        quizBTN.setText("QUIZ");
+        quizBTN.setMaximumSize(new java.awt.Dimension(193, 35));
+        quizBTN.setMinimumSize(new java.awt.Dimension(193, 35));
+        quizBTN.setPreferredSize(new java.awt.Dimension(193, 35));
+        quizBTN.addActionListener(this::quizBTNActionPerformed);
+        navBtnsPNL.add(quizBTN);
 
-        titlePNL.setBackground(new java.awt.Color(204, 255, 255));
+        pledgeBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        pledgeBTN.setText("PLEDGE");
+        pledgeBTN.setMaximumSize(new java.awt.Dimension(193, 35));
+        pledgeBTN.setMinimumSize(new java.awt.Dimension(193, 35));
+        pledgeBTN.setPreferredSize(new java.awt.Dimension(193, 35));
+        pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
+        navBtnsPNL.add(pledgeBTN);
 
-        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        titleLBL.setText("LEARN");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
+        contentPNL.add(navBtnsPNL, gridBagConstraints);
 
-        javax.swing.GroupLayout titlePNLLayout = new javax.swing.GroupLayout(titlePNL);
-        titlePNL.setLayout(titlePNLLayout);
-        titlePNLLayout.setHorizontalGroup(
-            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePNLLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titleLBL)
-                .addGap(137, 137, 137))
-        );
-        titlePNLLayout.setVerticalGroup(
-            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(titlePNLLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
+        viewScoresBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         viewScoresBTN.setText("VIEW SCORES");
         viewScoresBTN.addActionListener(this::viewScoresBTNActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 4;
+        contentPNL.add(viewScoresBTN, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titlePNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(usernameLBL)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submitBTN)
-                    .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(welcomeMsgLBL))
-                .addGap(59, 59, 59))
+            .addComponent(titlePNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(quizBTN)
-                        .addGap(42, 42, 42)
-                        .addComponent(pledgeBTN))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(viewScoresBTN)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(contentPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,22 +140,10 @@ public class LearnMenuGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(titlePNL, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(welcomeMsgLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernameLBL)
-                    .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(titlePNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(submitBTN)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(quizBTN)
-                    .addComponent(pledgeBTN))
-                .addGap(18, 18, 18)
-                .addComponent(viewScoresBTN)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addComponent(contentPNL, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(156, 156, 156))
         );
 
         pack();
@@ -190,6 +200,8 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel contentPNL;
+    private javax.swing.JPanel navBtnsPNL;
     private goal12.Navbar navbar1;
     private javax.swing.JButton pledgeBTN;
     private javax.swing.JButton quizBTN;
@@ -197,6 +209,7 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel titleLBL;
     private javax.swing.JPanel titlePNL;
     private javax.swing.JLabel usernameLBL;
+    private javax.swing.JPanel usernamePNL;
     private javax.swing.JTextField usernameTF;
     private javax.swing.JButton viewScoresBTN;
     private javax.swing.JLabel welcomeMsgLBL;
