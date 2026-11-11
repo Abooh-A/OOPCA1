@@ -17,6 +17,9 @@ public class LearnMenuGUI extends javax.swing.JFrame {
      */
     public LearnMenuGUI() {
         initComponents();
+        setSize(900, 700);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
     /**

@@ -33,38 +33,20 @@ public class learnNavbar extends javax.swing.JPanel {
         quizBTN = new javax.swing.JButton();
         pledgeBTN = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setOpaque(false);
+
         lMenuBTN.setText("LEARN MENU");
         lMenuBTN.addActionListener(this::lMenuBTNActionPerformed);
+        add(lMenuBTN);
 
         quizBTN.setText("QUIZ");
         quizBTN.addActionListener(this::quizBTNActionPerformed);
+        add(quizBTN);
 
         pledgeBTN.setText("PLEDGE");
         pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(lMenuBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(quizBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pledgeBTN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lMenuBTN)
-                    .addComponent(quizBTN)
-                    .addComponent(pledgeBTN))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(pledgeBTN);
     }// </editor-fold>//GEN-END:initComponents
 
     private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed

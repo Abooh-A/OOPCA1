@@ -17,6 +17,9 @@ public class QuizGUI extends javax.swing.JFrame {
      */
     public QuizGUI() {
         initComponents();
+        setSize(900, 700);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,9 +30,14 @@ public class QuizGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         answersBtnG = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        titleLBL = new javax.swing.JLabel();
+        learnNavbar2 = new goal12.LearnAbooh.learnNavbar();
         navbar1 = new goal12.Navbar();
+        contentPNL = new javax.swing.JPanel();
         quizPNL = new javax.swing.JPanel();
         quizPB = new javax.swing.JProgressBar();
         questionLBL = new javax.swing.JLabel();
@@ -39,29 +47,66 @@ public class QuizGUI extends javax.swing.JFrame {
         option4RB = new javax.swing.JRadioButton();
         nextBTN = new javax.swing.JButton();
         viewScoresBTN = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        titleLBL = new javax.swing.JLabel();
-        learnNavbar1 = new goal12.LearnAbooh.learnNavbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        quizPNL.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
 
-        questionLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        titleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        titleLBL.setText("LEARN - QUIZ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(learnNavbar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(titleLBL)
+                    .addComponent(learnNavbar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        contentPNL.setBackground(new java.awt.Color(204, 255, 204));
+        contentPNL.setOpaque(false);
+        contentPNL.setLayout(new java.awt.GridBagLayout());
+
+        quizPNL.setBackground(new java.awt.Color(255, 255, 255));
+        quizPNL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 204)));
+        quizPNL.setPreferredSize(new java.awt.Dimension(650, 450));
+
+        questionLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
+        questionLBL.setForeground(new java.awt.Color(0, 102, 204));
+        questionLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         questionLBL.setText("Quiz Question");
 
         answersBtnG.add(option1RB);
+        option1RB.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
         option1RB.setText("Option 1");
 
         answersBtnG.add(option2RB);
+        option2RB.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
         option2RB.setText("Option 2");
 
         answersBtnG.add(option3RB);
+        option3RB.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
         option3RB.setText("Option 3");
 
         answersBtnG.add(option4RB);
+        option4RB.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
         option4RB.setText("Option 4");
 
+        nextBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         nextBTN.setText("Next Question");
 
         javax.swing.GroupLayout quizPNLLayout = new javax.swing.GroupLayout(quizPNL);
@@ -72,91 +117,61 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addGroup(quizPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(quizPNLLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(quizPB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(quizPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(nextBTN)
+                            .addComponent(questionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(quizPB, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(quizPNLLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
                         .addGroup(quizPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(quizPNLLayout.createSequentialGroup()
-                                .addGap(120, 120, 120)
-                                .addComponent(questionLBL))
-                            .addGroup(quizPNLLayout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addGroup(quizPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(option2RB)
-                                    .addComponent(option1RB)
-                                    .addComponent(option3RB)
-                                    .addComponent(option4RB))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(quizPNLLayout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(nextBTN)
-                .addContainerGap(109, Short.MAX_VALUE))
+                            .addComponent(option2RB)
+                            .addComponent(option1RB)
+                            .addComponent(option3RB)
+                            .addComponent(option4RB))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        quizPNLLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {questionLBL, quizPB});
+
         quizPNLLayout.setVerticalGroup(
             quizPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(quizPNLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(quizPB, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(questionLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(option1RB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(option2RB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(option3RB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(option4RB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(71, 71, 71)
                 .addComponent(nextBTN)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(51, 51, 51))
         );
 
+        quizPNLLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {option1RB, option2RB, option3RB, option4RB});
+
+        contentPNL.add(quizPNL, new java.awt.GridBagConstraints());
+
+        viewScoresBTN.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         viewScoresBTN.setText("VIEW SCORES");
-
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
-
-        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        titleLBL.setText("GOAL 12 QUIZ");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(learnNavbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(learnNavbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titleLBL))
-                .addContainerGap())
-        );
+        viewScoresBTN.addActionListener(this::viewScoresBTNActionPerformed);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
+        contentPNL.add(viewScoresBTN, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(viewScoresBTN))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(quizPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contentPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,15 +179,20 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addComponent(quizPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(viewScoresBTN)
-                .addGap(73, 73, 73))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contentPNL, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void viewScoresBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewScoresBTNActionPerformed
+        // TODO add your handling code here:
+        ScoresGUI myScores = new ScoresGUI();
+        myScores.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewScoresBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,8 +221,9 @@ public class QuizGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup answersBtnG;
+    private javax.swing.JPanel contentPNL;
     private javax.swing.JPanel jPanel1;
-    private goal12.LearnAbooh.learnNavbar learnNavbar1;
+    private goal12.LearnAbooh.learnNavbar learnNavbar2;
     private goal12.Navbar navbar1;
     private javax.swing.JButton nextBTN;
     private javax.swing.JRadioButton option1RB;
