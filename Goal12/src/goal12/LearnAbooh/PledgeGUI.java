@@ -4,6 +4,12 @@
  */
 package goal12.LearnAbooh;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author Obaapanin Abooh Agyekum <your.name at your.org>
@@ -20,6 +26,14 @@ public class PledgeGUI extends javax.swing.JFrame {
         setSize(900, 700);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        
+        JTableHeader pledgeHeader = pledgeTBL.getTableHeader();
+        pledgeHeader.setFont(pledgeHeader.getFont().deriveFont(Font.BOLD, 20f));
+        pledgeHeader.setBackground(new Color(0,102,204));
+        pledgeHeader.setForeground(Color.white);
+
+        DefaultTableCellRenderer pledgeHeaderTableCellRenderer = (DefaultTableCellRenderer) pledgeHeader.getDefaultRenderer();
+        pledgeHeaderTableCellRenderer.setHorizontalAlignment(JLabel.CENTER);
     }
 
     /**
@@ -81,6 +95,7 @@ public class PledgeGUI extends javax.swing.JFrame {
         );
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         pledgeTblSP.setBackground(new java.awt.Color(0, 102, 204));
@@ -111,6 +126,7 @@ public class PledgeGUI extends javax.swing.JFrame {
         jPanel1.add(pledgeTblSP, gridBagConstraints);
 
         controlsPNL.setBackground(new java.awt.Color(255, 51, 51));
+        controlsPNL.setOpaque(false);
 
         pledgeTypeBG.add(ongoingPlgRB);
         ongoingPlgRB.setText("Ongoing Pledge");
