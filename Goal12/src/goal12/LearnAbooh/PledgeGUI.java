@@ -30,11 +30,11 @@ public class PledgeGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         pledgeTypeBG = new javax.swing.ButtonGroup();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        pledgeTblSP = new javax.swing.JScrollPane();
         pledgeTBL = new javax.swing.JTable();
-        learnNavbar1 = new goal12.LearnAbooh.learnNavbar();
         navbar1 = new goal12.Navbar();
         pledgeCrteBTN = new javax.swing.JButton();
         searchPlgTF = new javax.swing.JTextField();
@@ -46,6 +46,9 @@ public class PledgeGUI extends javax.swing.JFrame {
         newPledgeTF = new javax.swing.JTextField();
         oneTimePlgRB = new javax.swing.JRadioButton();
         ongoingPlgRB = new javax.swing.JRadioButton();
+        titlePNL = new javax.swing.JPanel();
+        titleLBL1 = new javax.swing.JLabel();
+        learnNavbar = new goal12.LearnAbooh.learnNavbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,7 +63,7 @@ public class PledgeGUI extends javax.swing.JFrame {
                 "Pledge", "Type", "Progress"
             }
         ));
-        jScrollPane1.setViewportView(pledgeTBL);
+        pledgeTblSP.setViewportView(pledgeTBL);
 
         pledgeCrteBTN.setText("Create Pledge");
         pledgeCrteBTN.addActionListener(this::pledgeCrteBTNActionPerformed);
@@ -87,43 +90,63 @@ public class PledgeGUI extends javax.swing.JFrame {
         pledgeTypeBG.add(ongoingPlgRB);
         ongoingPlgRB.setText("Ongoing Pledge");
 
+        titlePNL.setBackground(new java.awt.Color(0, 102, 204));
+
+        titleLBL1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        titleLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        titleLBL1.setText("LEARN - PLEDGE");
+
+        javax.swing.GroupLayout titlePNLLayout = new javax.swing.GroupLayout(titlePNL);
+        titlePNL.setLayout(titlePNLLayout);
+        titlePNLLayout.setHorizontalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePNLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLBL1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        titlePNLLayout.setVerticalGroup(
+            titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(titlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(titleLBL1)
+                    .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titlePNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(titleLBL))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(pledgeCrteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(editPlgBTN)
-                                    .addComponent(deletePlgBTN))
-                                .addComponent(updateBTN, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(searchBTN)
-                            .addComponent(newPledgeTF)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ongoingPlgRB)
-                                    .addComponent(oneTimePlgRB)))
-                            .addComponent(searchPlgTF)))
+                        .addGap(372, 372, 372)
+                        .addComponent(titleLBL))
+                    .addComponent(pledgeTblSP, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pledgeCrteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(editPlgBTN)
+                            .addComponent(deletePlgBTN))
+                        .addComponent(updateBTN, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(searchBTN)
+                    .addComponent(newPledgeTF)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(learnNavbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ongoingPlgRB)
+                            .addComponent(oneTimePlgRB)))
+                    .addComponent(searchPlgTF))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deletePlgBTN, editPlgBTN, newPledgeTF, pledgeCrteBTN, searchBTN, searchPlgTF, updateBTN});
@@ -131,9 +154,10 @@ public class PledgeGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(learnNavbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titlePNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 401, Short.MAX_VALUE)
                 .addComponent(titleLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,10 +180,8 @@ public class PledgeGUI extends javax.swing.JFrame {
                         .addComponent(deletePlgBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(updateBTN))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pledgeTblSP, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57))
         );
 
         pack();
@@ -203,20 +225,40 @@ public class PledgeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel contentPNL;
+    private javax.swing.JPanel contentPNL1;
     private javax.swing.JButton deletePlgBTN;
     private javax.swing.JButton editPlgBTN;
-    private javax.swing.JScrollPane jScrollPane1;
-    private goal12.LearnAbooh.learnNavbar learnNavbar1;
+    private goal12.LearnAbooh.learnNavbar learnNavbar;
     private goal12.Navbar navbar1;
     private javax.swing.JTextField newPledgeTF;
+    private javax.swing.JButton nextBTN;
+    private javax.swing.JButton nextBTN1;
     private javax.swing.JRadioButton oneTimePlgRB;
     private javax.swing.JRadioButton ongoingPlgRB;
+    private javax.swing.JRadioButton option1RB;
+    private javax.swing.JRadioButton option1RB1;
+    private javax.swing.JRadioButton option2RB;
+    private javax.swing.JRadioButton option2RB1;
+    private javax.swing.JRadioButton option3RB;
+    private javax.swing.JRadioButton option3RB1;
+    private javax.swing.JRadioButton option4RB;
+    private javax.swing.JRadioButton option4RB1;
     private javax.swing.JButton pledgeCrteBTN;
     private javax.swing.JTable pledgeTBL;
+    private javax.swing.JScrollPane pledgeTblSP;
     private javax.swing.ButtonGroup pledgeTypeBG;
+    private javax.swing.JLabel questionLBL;
+    private javax.swing.JLabel questionLBL1;
+    private javax.swing.JProgressBar quizPB;
+    private javax.swing.JProgressBar quizPB1;
+    private javax.swing.JPanel quizPNL;
+    private javax.swing.JPanel quizPNL1;
     private javax.swing.JButton searchBTN;
     private javax.swing.JTextField searchPlgTF;
     private javax.swing.JLabel titleLBL;
+    private javax.swing.JLabel titleLBL1;
+    private javax.swing.JPanel titlePNL;
     private javax.swing.JButton updateBTN;
     // End of variables declaration//GEN-END:variables
 }
