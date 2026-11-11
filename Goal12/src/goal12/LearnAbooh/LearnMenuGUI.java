@@ -28,31 +28,129 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        navbar1 = new goal12.Navbar();
+        quizBTN = new javax.swing.JButton();
+        pledgeBTN = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        usernameLBL = new javax.swing.JLabel();
+        usernameTF = new javax.swing.JTextField();
+        welcomMsgLBL = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        titleLBL = new javax.swing.JLabel();
+        viewScoresBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Learn");
+        quizBTN.setText("QUIZ");
+        quizBTN.addActionListener(this::quizBTNActionPerformed);
+
+        pledgeBTN.setText("PLEDGE");
+        pledgeBTN.addActionListener(this::pledgeBTNActionPerformed);
+
+        jButton1.setText("SUBMIT");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        usernameLBL.setText("Username");
+
+        welcomMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        welcomMsgLBL.setText("Welcome");
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
+        titleLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        titleLBL.setText("LEARN");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titleLBL)
+                .addGap(137, 137, 137))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLBL)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        viewScoresBTN.setText("VIEW SCORES");
+        viewScoresBTN.addActionListener(this::viewScoresBTNActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(usernameLBL)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(welcomMsgLBL))
+                .addGap(59, 59, 59))
             .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jLabel1)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(quizBTN)
+                        .addGap(42, 42, 42)
+                        .addComponent(pledgeBTN))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(viewScoresBTN)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jLabel1)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(welcomMsgLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameLBL)
+                    .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(quizBTN)
+                    .addComponent(pledgeBTN))
+                .addGap(18, 18, 18)
+                .addComponent(viewScoresBTN)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void quizBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quizBTNActionPerformed
+
+    private void pledgeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pledgeBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pledgeBTNActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void viewScoresBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewScoresBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewScoresBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,6 +178,15 @@ public class LearnMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
+    private goal12.Navbar navbar1;
+    private javax.swing.JButton pledgeBTN;
+    private javax.swing.JButton quizBTN;
+    private javax.swing.JLabel titleLBL;
+    private javax.swing.JLabel usernameLBL;
+    private javax.swing.JTextField usernameTF;
+    private javax.swing.JButton viewScoresBTN;
+    private javax.swing.JLabel welcomMsgLBL;
     // End of variables declaration//GEN-END:variables
 }
