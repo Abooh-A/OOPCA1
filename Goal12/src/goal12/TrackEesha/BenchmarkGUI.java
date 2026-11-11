@@ -19,7 +19,9 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     public BenchmarkGUI() {
         initComponents();
         setSize(900, 700);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        benchmarkNavBTN.setEnabled(false);
     }
 
     /**
@@ -31,107 +33,107 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        topPNL = new javax.swing.JPanel();
+        navbar1 = new goal12.Navbar();
         headPNL = new javax.swing.JPanel();
         titleJL = new javax.swing.JLabel();
-        backBTN = new javax.swing.JButton();
+        headBTNPNL = new javax.swing.JPanel();
+        logNavBTN = new javax.swing.JButton();
+        benchmarkNavBTN = new javax.swing.JButton();
+        bodyPNL = new javax.swing.JPanel();
+        formPNL = new javax.swing.JPanel();
+        householdSizeJL = new javax.swing.JLabel();
         householdSizeSP = new javax.swing.JSpinner();
+        categoryJL = new javax.swing.JLabel();
         categoryCB = new javax.swing.JComboBox<>();
+        emptyJL = new javax.swing.JLabel();
         compareBTN = new javax.swing.JButton();
         scrollPN = new javax.swing.JScrollPane();
         resultTA = new javax.swing.JTextArea();
-        householdSizeJL = new javax.swing.JLabel();
-        categoryJL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        titleJL.setText("household benchmark");
+        topPNL.setLayout(new java.awt.BorderLayout());
+        topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
 
-        backBTN.setText("back");
-        backBTN.addActionListener(this::backBTNActionPerformed);
+        headPNL.setBackground(new java.awt.Color(0, 102, 0));
+        headPNL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        javax.swing.GroupLayout headPNLLayout = new javax.swing.GroupLayout(headPNL);
-        headPNL.setLayout(headPNLLayout);
-        headPNLLayout.setHorizontalGroup(
-            headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPNLLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backBTN)
-                    .addComponent(titleJL))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        headPNLLayout.setVerticalGroup(
-            headPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPNLLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(titleJL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(backBTN)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleJL.setForeground(new java.awt.Color(255, 255, 255));
+        titleJL.setText("Track | Household benchmark");
+        headPNL.add(titleJL);
 
-        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothes", "general", "all categories", " " }));
-        categoryCB.addActionListener(this::categoryCBActionPerformed);
+        headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
+        headBTNPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        compareBTN.setText("compare");
+        logNavBTN.setText("log items");
+        logNavBTN.addActionListener(this::logNavBTNActionPerformed);
+        headBTNPNL.add(logNavBTN);
 
-        resultTA.setColumns(20);
-        resultTA.setRows(5);
-        scrollPN.setViewportView(resultTA);
+        benchmarkNavBTN.setText("household benchmark");
+        benchmarkNavBTN.addActionListener(this::benchmarkNavBTNActionPerformed);
+        headBTNPNL.add(benchmarkNavBTN);
+
+        headPNL.add(headBTNPNL);
+
+        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
+
+        bodyPNL.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 15, 15));
+        bodyPNL.setLayout(new java.awt.BorderLayout());
+
+        formPNL.setLayout(new java.awt.GridLayout(3, 2, 10, 8));
 
         householdSizeJL.setText("household size");
+        formPNL.add(householdSizeJL);
+
+        householdSizeSP.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        formPNL.add(householdSizeSP);
 
         categoryJL.setText("category");
+        formPNL.add(categoryJL);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(headPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scrollPN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(compareBTN)
-                    .addComponent(categoryCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(householdSizeSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(householdSizeJL)
-                    .addComponent(categoryJL))
-                .addGap(0, 157, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(householdSizeJL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(householdSizeSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(headPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(categoryJL)
-                        .addGap(4, 4, 4)
-                        .addComponent(categoryCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(compareBTN))
-                    .addComponent(scrollPN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 82, Short.MAX_VALUE))
-        );
+        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothes", "general", "all categories" }));
+        categoryCB.addActionListener(this::categoryCBActionPerformed);
+        formPNL.add(categoryCB);
+        formPNL.add(emptyJL);
+
+        compareBTN.setText("compare");
+        formPNL.add(compareBTN);
+
+        bodyPNL.add(formPNL, java.awt.BorderLayout.NORTH);
+
+        resultTA.setEditable(false);
+        resultTA.setColumns(20);
+        resultTA.setRows(5);
+        resultTA.setText("choose your household size and category, then click Compare");
+        scrollPN.setViewportView(resultTA);
+
+        bodyPNL.add(scrollPN, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
-        this.dispose();
-        new TrackMenuGUI().setVisible(true);        
-    }//GEN-LAST:event_backBTNActionPerformed
-
     private void categoryCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_categoryCBActionPerformed
+
+    private void logNavBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logNavBTNActionPerformed
+        // TODO add your handling code here:
+        new LogGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logNavBTNActionPerformed
+
+    private void benchmarkNavBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benchmarkNavBTNActionPerformed
+        // TODO add your handling code here:
+        new BenchmarkGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_benchmarkNavBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,15 +161,22 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBTN;
+    private javax.swing.JButton benchmarkNavBTN;
+    private javax.swing.JPanel bodyPNL;
     private javax.swing.JComboBox<String> categoryCB;
     private javax.swing.JLabel categoryJL;
     private javax.swing.JButton compareBTN;
+    private javax.swing.JLabel emptyJL;
+    private javax.swing.JPanel formPNL;
+    private javax.swing.JPanel headBTNPNL;
     private javax.swing.JPanel headPNL;
     private javax.swing.JLabel householdSizeJL;
     private javax.swing.JSpinner householdSizeSP;
+    private javax.swing.JButton logNavBTN;
+    private goal12.Navbar navbar1;
     private javax.swing.JTextArea resultTA;
     private javax.swing.JScrollPane scrollPN;
     private javax.swing.JLabel titleJL;
+    private javax.swing.JPanel topPNL;
     // End of variables declaration//GEN-END:variables
 }
