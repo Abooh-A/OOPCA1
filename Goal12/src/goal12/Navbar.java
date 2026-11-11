@@ -6,8 +6,8 @@ package goal12;
 import goal12.ActJulieta.ActMenuGUI;
 import goal12.LearnAbooh.LearnMenuGUI;
 import goal12.TrackEesha.TrackMenuGUI;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Window;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -66,31 +66,41 @@ public class Navbar extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(homeBTN)
                     .addComponent(learnBTN)
                     .addComponent(trackBTN)
                     .addComponent(actBTN))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void homeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBTNActionPerformed
         // TODO add your handling code here:
+        Goal12GUI homeGUI = new Goal12GUI();
+        homeGUI.setVisible(true);
         
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
     }//GEN-LAST:event_homeBTNActionPerformed
 
     private void actBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBTNActionPerformed
         // TODO add your handling code here:
         ActMenuGUI act = new ActMenuGUI();
         act.setVisible(true);
+        
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
     }//GEN-LAST:event_actBTNActionPerformed
 
     private void learnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnBTNActionPerformed
         // TODO add your handling code here:
         LearnMenuGUI learn = new LearnMenuGUI();
         learn.setVisible(true);
+        
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
         
         /*learnBTN.addActionListener(new ActionListener(){
             @Override //the action listener interface requires us to write an abstract method called actionPerformed
@@ -105,6 +115,9 @@ public class Navbar extends javax.swing.JPanel {
         // TODO add your handling code here:
         TrackMenuGUI track = new TrackMenuGUI();
         track.setVisible(true);
+        
+        Window currentFrame = SwingUtilities.getWindowAncestor(this);
+        currentFrame.dispose();
     }//GEN-LAST:event_trackBTNActionPerformed
 
 

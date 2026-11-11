@@ -8,14 +8,14 @@ package goal12;
  *
  * @author Obaapanin Abooh Agyekum <your.name at your.org>
  */
-public class goal12GUI extends javax.swing.JFrame {
+public class Goal12GUI extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(goal12GUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Goal12GUI.class.getName());
 
     /**
      * Creates new form goal12GUI
      */
-    public goal12GUI() {
+    public Goal12GUI() {
         initComponents();
     }
 
@@ -102,7 +102,7 @@ public class goal12GUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new goal12GUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Goal12GUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
