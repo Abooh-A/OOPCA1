@@ -32,6 +32,8 @@ public class LogGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        topPNL = new javax.swing.JPanel();
+        navbar1 = new goal12.Navbar();
         headPNL = new javax.swing.JPanel();
         backBTN = new javax.swing.JButton();
         titleJL = new javax.swing.JLabel();
@@ -64,9 +66,11 @@ public class LogGUI extends javax.swing.JFrame {
         bottomPNL = new javax.swing.JPanel();
         totalsJL = new javax.swing.JLabel();
         deleteBTN = new javax.swing.JButton();
-        navbar1 = new goal12.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        topPNL.setLayout(new java.awt.BorderLayout());
+        topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
         headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -81,7 +85,9 @@ public class LogGUI extends javax.swing.JFrame {
         titleJL.setText("log items");
         headPNL.add(titleJL);
 
-        getContentPane().add(headPNL, java.awt.BorderLayout.NORTH);
+        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
 
         bodyPNL.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 15, 15));
         bodyPNL.setLayout(new java.awt.BorderLayout());
@@ -178,7 +184,6 @@ public class LogGUI extends javax.swing.JFrame {
         tablePNL.add(bottomPNL, java.awt.BorderLayout.SOUTH);
 
         bodyPNL.add(tablePNL, java.awt.BorderLayout.CENTER);
-        bodyPNL.add(navbar1, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
 
@@ -272,6 +277,7 @@ public class LogGUI extends javax.swing.JFrame {
     private javax.swing.JPanel statusPNL;
     private javax.swing.JPanel tablePNL;
     private javax.swing.JLabel titleJL;
+    private javax.swing.JPanel topPNL;
     private javax.swing.JLabel totalsJL;
     private javax.swing.JLabel weightLB;
     private javax.swing.JTextField weightTF;

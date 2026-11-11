@@ -51,7 +51,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         topPNL.setLayout(new java.awt.BorderLayout());
-        topPNL.add(navbar1, java.awt.BorderLayout.PAGE_END);
+        topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
         headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -64,7 +64,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         backBTN.addActionListener(this::backBTNActionPerformed);
         headPNL.add(backBTN);
 
-        topPNL.add(headPNL, java.awt.BorderLayout.NORTH);
+        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
 
