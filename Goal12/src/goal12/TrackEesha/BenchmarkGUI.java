@@ -45,6 +45,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         compareBTN = new javax.swing.JButton();
         scrollPN = new javax.swing.JScrollPane();
         resultTA = new javax.swing.JTextArea();
+        navbar1 = new goal12.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,6 +93,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         scrollPN.setViewportView(resultTA);
 
         bodyPNL.add(scrollPN, java.awt.BorderLayout.CENTER);
+        bodyPNL.add(navbar1, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
 
@@ -143,6 +145,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     private javax.swing.JPanel headPNL;
     private javax.swing.JLabel householdSizeJL;
     private javax.swing.JSpinner householdSizeSP;
+    private goal12.Navbar navbar1;
     private javax.swing.JTextArea resultTA;
     private javax.swing.JScrollPane scrollPN;
     private javax.swing.JLabel titleJL;

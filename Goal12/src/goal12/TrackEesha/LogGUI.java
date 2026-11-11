@@ -64,6 +64,7 @@ public class LogGUI extends javax.swing.JFrame {
         bottomPNL = new javax.swing.JPanel();
         totalsJL = new javax.swing.JLabel();
         deleteBTN = new javax.swing.JButton();
+        navbar1 = new goal12.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -177,6 +178,7 @@ public class LogGUI extends javax.swing.JFrame {
         tablePNL.add(bottomPNL, java.awt.BorderLayout.SOUTH);
 
         bodyPNL.add(tablePNL, java.awt.BorderLayout.CENTER);
+        bodyPNL.add(navbar1, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
 
@@ -256,6 +258,7 @@ public class LogGUI extends javax.swing.JFrame {
     private javax.swing.JLabel itemTypeJL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTable logTBL;
+    private goal12.Navbar navbar1;
     private javax.swing.JRadioButton newRB;
     private javax.swing.JScrollPane scrollPN;
     private javax.swing.JButton searchBTN;
