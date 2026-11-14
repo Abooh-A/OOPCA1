@@ -8,6 +8,6 @@ package goal12.ActJulieta;
  *
  * @author macbook
  */
-public class CoffeeIdea {
+public abstract class CoffeeIdea {
     
 }

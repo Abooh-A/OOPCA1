@@ -8,6 +8,19 @@ package goal12.ActJulieta;
  *
  * @author macbook
  */
-public class EcoAction{
+public abstract class EcoAction{
+    protected String placeType;
+    
+    //CONSTRUCTORS
+    protected EcoAction(String placeType) {
+        this.placeType = placeType;
+    }
+
+    protected EcoAction() {
+    }
+    
+    //Others
+    
+    
     
 }
