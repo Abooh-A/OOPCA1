@@ -9,12 +9,14 @@ package goal12.TrackEesha;
  * @author Eesha Penkey <your.name at your.org>
  */
 public class TrackData {
+    public static final String ALL_CATEGORIES = "all categories";
     public static final String[] CATEGORIES = {
         "food", "electronics", "clothing", "furniture", "plastic", "chemicals", "metals"
     };
     public static final String[] BENCHMARK_CATEGORIES = {
         "food", "electronics", "clothing", "furniture", "plastic", "chemicals", "metals", ALL_CATEGORIES
     };
+    public static final String[] WASTE_REASONS = {"broken", "unwanted", "expired / spoiled", "packaging"};
 
     private TrackData() { }
 

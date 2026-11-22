@@ -274,7 +274,7 @@ public class LogGUI extends javax.swing.JFrame {
         categoryJL.setText("category");
         formPNL.add(categoryJL);
 
-        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothing", "household" }));
+        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothing", "furniture", "plastic", "chemicals", "metals" }));
         categoryCB.addActionListener(this::categoryCBActionPerformed);
         formPNL.add(categoryCB);
 

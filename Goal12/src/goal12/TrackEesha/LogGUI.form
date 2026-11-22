@@ -152,11 +152,14 @@
             <Component class="javax.swing.JComboBox" name="categoryCB">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="7">
                     <StringItem index="0" value="food"/>
                     <StringItem index="1" value="electronics"/>
                     <StringItem index="2" value="clothing"/>
-                    <StringItem index="3" value="household"/>
+                    <StringItem index="3" value="furniture"/>
+                    <StringItem index="4" value="plastic"/>
+                    <StringItem index="5" value="chemicals"/>
+                    <StringItem index="6" value="metals"/>
                   </StringArray>
                 </Property>
               </Properties>

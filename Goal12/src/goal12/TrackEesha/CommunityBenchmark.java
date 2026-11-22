@@ -17,7 +17,6 @@ import java.util.ArrayList;
  */
 public class CommunityBenchmark {
     private static final String COMMUNITY_FILE = "community_benchmark.txt";
-    public static final String ALL_CATEGORIES = "all categories";
 
     private ArrayList<HouseholdRecord> records;
 
