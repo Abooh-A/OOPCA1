@@ -16,7 +16,8 @@ import java.util.ArrayList;
  * @author Eesha Penkey <your.name at your.org>
  */
 public class CommunityBenchmark {
-     private static final String COMMUNITY_FILE = "community_benchmark.txt";
+    private static final String COMMUNITY_FILE = "community_benchmark.txt";
+    public static final String ALL_CATEGORIES = "all categories";
 
     private ArrayList<HouseholdRecord> records;
 
@@ -63,9 +64,9 @@ public class CommunityBenchmark {
     /** Sample data: households of 1-5 people for every category. */
     private void createDefaultData() {
         String[] categories = TrackData.BENCHMARK_CATEGORIES;
-        double[] perPerson = {40, 12, 8, 20, 80};         // kg per person
-        double[] wasteShare = {0.25, 0.05, 0.15, 0.20, 0.18};
-        double[] circularity = {5, 15, 25, 10, 12};        // percent
+        double[] perPerson = {40, 12, 8, 15, 6, 4, 5, 90};          // kg per person
+        double[] wasteShare = {0.25, 0.05, 0.15, 0.10, 0.30, 0.20, 0.10, 0.18};
+        double[] circularity = {5, 15, 25, 30, 10, 5, 35, 16};      // percent
         for (int c = 0; c < categories.length; c++) {
             for (int size = 1; size <= 5; size++) {
                 double each = perPerson[c] * (1 - 0.06 * (size - 1));   // bigger households share more
