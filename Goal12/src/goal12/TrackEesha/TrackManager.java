@@ -4,6 +4,12 @@
  */
 package goal12.TrackEesha;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -50,7 +56,7 @@ public class TrackManager {
 
     public int getEntryCount() { return entries.size(); }
 
-    /** Case-insensitive, partial matches allowed (e.g. "clo" finds clothing). */
+    //Case-insensitive, partial matches allowed (e.g. "clo" finds clothing). 
     public ArrayList<LogEntry> searchByCategory(String category) {
         ArrayList<LogEntry> found = new ArrayList<>();
         String wanted = category.trim().toLowerCase();
