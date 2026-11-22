@@ -372,6 +372,7 @@ public class LogGUI extends javax.swing.JFrame {
 
     private void categoryCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryCBActionPerformed
         // TODO add your handling code here:
+        updateItemTypes();
     }//GEN-LAST:event_categoryCBActionPerformed
 
     private void newRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newRBActionPerformed
