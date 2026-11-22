@@ -5,6 +5,7 @@
 package goal12.TrackEesha;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 /**
  *
  * @author appsd
@@ -151,93 +152,6 @@ public class BenchmarkGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void initComponents() {
-
-        topPNL = new javax.swing.JPanel();
-        navbar1 = new goal12.Navbar();
-        headPNL = new javax.swing.JPanel();
-        titleJL = new javax.swing.JLabel();
-        headBTNPNL = new javax.swing.JPanel();
-        logNavBTN = new javax.swing.JButton();
-        benchmarkNavBTN = new javax.swing.JButton();
-        bodyPNL = new javax.swing.JPanel();
-        formPNL = new javax.swing.JPanel();
-        householdSizeJL = new javax.swing.JLabel();
-        householdSizeSP = new javax.swing.JSpinner();
-        categoryJL = new javax.swing.JLabel();
-        categoryCB = new javax.swing.JComboBox<>();
-        emptyJL = new javax.swing.JLabel();
-        compareBTN = new javax.swing.JButton();
-        scrollPN = new javax.swing.JScrollPane();
-        resultTA = new javax.swing.JTextArea();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        topPNL.setLayout(new java.awt.BorderLayout());
-        topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
-
-        headPNL.setBackground(new java.awt.Color(0, 102, 0));
-        headPNL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
-        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("Track | Household benchmark");
-        headPNL.add(titleJL);
-
-        headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
-        headBTNPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
-
-        logNavBTN.setText("log items");
-        logNavBTN.addActionListener(this::logNavBTNActionPerformed);
-        headBTNPNL.add(logNavBTN);
-
-        benchmarkNavBTN.setText("household benchmark");
-        benchmarkNavBTN.addActionListener(this::benchmarkNavBTNActionPerformed);
-        headBTNPNL.add(benchmarkNavBTN);
-
-        headPNL.add(headBTNPNL);
-
-        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
-
-        bodyPNL.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 15, 15));
-        bodyPNL.setLayout(new java.awt.BorderLayout());
-
-        formPNL.setLayout(new java.awt.GridLayout(3, 2, 10, 8));
-
-        householdSizeJL.setText("household size");
-        formPNL.add(householdSizeJL);
-
-        householdSizeSP.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        formPNL.add(householdSizeSP);
-
-        categoryJL.setText("category");
-        formPNL.add(categoryJL);
-
-        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothes", "general", "all categories" }));
-        categoryCB.addActionListener(this::categoryCBActionPerformed);
-        formPNL.add(categoryCB);
-        formPNL.add(emptyJL);
-
-        compareBTN.setText("compare");
-        formPNL.add(compareBTN);
-
-        bodyPNL.add(formPNL, java.awt.BorderLayout.NORTH);
-
-        resultTA.setEditable(false);
-        resultTA.setColumns(20);
-        resultTA.setRows(5);
-        resultTA.setText("choose your household size and category, then click Compare");
-        scrollPN.setViewportView(resultTA);
-
-        bodyPNL.add(scrollPN, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
-
-        pack();
-    }
     private void categoryCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_categoryCBActionPerformed
@@ -258,7 +172,6 @@ public class BenchmarkGUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -273,18 +186,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        /* Create and display the form */
+         //Create and display the form 
         java.awt.EventQueue.invokeLater(() -> new BenchmarkGUI().setVisible(true));
     }
 

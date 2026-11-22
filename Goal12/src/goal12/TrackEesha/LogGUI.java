@@ -5,6 +5,13 @@
 package goal12.TrackEesha;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author appsd
@@ -359,177 +366,6 @@ public class LogGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void initComponents() {
-
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        topPNL = new javax.swing.JPanel();
-        navbar1 = new goal12.Navbar();
-        headPNL = new javax.swing.JPanel();
-        titleJL = new javax.swing.JLabel();
-        headBTNPNL = new javax.swing.JPanel();
-        logNavBTN = new javax.swing.JButton();
-        benchmarkNavBTN = new javax.swing.JButton();
-        bodyPNL = new javax.swing.JPanel();
-        formPNL = new javax.swing.JPanel();
-        categoryJL = new javax.swing.JLabel();
-        categoryCB = new javax.swing.JComboBox<>();
-        itemTypeJL = new javax.swing.JLabel();
-        itemTypeCB = new javax.swing.JComboBox<>();
-        statusJL = new javax.swing.JLabel();
-        statusPNL = new javax.swing.JPanel();
-        newRB = new javax.swing.JRadioButton();
-        secondHandRB = new javax.swing.JRadioButton();
-        discardedRB = new javax.swing.JRadioButton();
-        weightLB = new javax.swing.JLabel();
-        weightTF = new javax.swing.JTextField();
-        dateLB = new javax.swing.JLabel();
-        dateTF = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        addBTN = new javax.swing.JButton();
-        tablePNL = new javax.swing.JPanel();
-        searchPNL = new javax.swing.JPanel();
-        searchLB = new javax.swing.JLabel();
-        searchByCB = new javax.swing.JComboBox<>();
-        searchTF = new javax.swing.JTextField();
-        searchBTN = new javax.swing.JButton();
-        showAllBTN = new javax.swing.JButton();
-        scrollPN = new javax.swing.JScrollPane();
-        logTBL = new javax.swing.JTable();
-        bottomPNL = new javax.swing.JPanel();
-        totalsJL = new javax.swing.JLabel();
-        deleteBTN = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        topPNL.setLayout(new java.awt.BorderLayout());
-        topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
-
-        headPNL.setBackground(new java.awt.Color(0, 102, 0));
-        headPNL.setLayout(new java.awt.BorderLayout());
-
-        titleJL.setBackground(new java.awt.Color(255, 255, 255));
-        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("TRACK | LOG ITEMS");
-        headPNL.add(titleJL, java.awt.BorderLayout.WEST);
-
-        headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
-        headBTNPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
-
-        logNavBTN.setText("log items");
-        logNavBTN.addActionListener(this::logNavBTNActionPerformed);
-        headBTNPNL.add(logNavBTN);
-
-        benchmarkNavBTN.setText("household benchmark");
-        benchmarkNavBTN.addActionListener(this::benchmarkNavBTNActionPerformed);
-        headBTNPNL.add(benchmarkNavBTN);
-
-        headPNL.add(headBTNPNL, java.awt.BorderLayout.EAST);
-
-        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
-
-        bodyPNL.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 15, 15));
-        bodyPNL.setLayout(new java.awt.BorderLayout());
-
-        formPNL.setLayout(new java.awt.GridLayout(6, 2, 10, 8));
-
-        categoryJL.setText("category");
-        formPNL.add(categoryJL);
-
-        categoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "food", "electronics", "clothing", "household" }));
-        categoryCB.addActionListener(this::categoryCBActionPerformed);
-        formPNL.add(categoryCB);
-
-        itemTypeJL.setText("item type");
-        formPNL.add(itemTypeJL);
-
-        itemTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "produce", "meat/dairy", "bakery", "packaged goods" }));
-        formPNL.add(itemTypeCB);
-
-        statusJL.setText("status");
-        formPNL.add(statusJL);
-
-        newRB.setText("new");
-        newRB.addActionListener(this::newRBActionPerformed);
-        statusPNL.add(newRB);
-
-        secondHandRB.setText("second hand");
-        secondHandRB.addActionListener(this::secondHandRBActionPerformed);
-        statusPNL.add(secondHandRB);
-
-        discardedRB.setText("discarded");
-        statusPNL.add(discardedRB);
-
-        formPNL.add(statusPNL);
-
-        weightLB.setText("weight");
-        formPNL.add(weightLB);
-
-        weightTF.addActionListener(this::weightTFActionPerformed);
-        formPNL.add(weightTF);
-
-        dateLB.setText("date");
-        formPNL.add(dateLB);
-
-        dateTF.addActionListener(this::dateTFActionPerformed);
-        formPNL.add(dateTF);
-        formPNL.add(jLabel1);
-
-        addBTN.setText("add");
-        formPNL.add(addBTN);
-
-        bodyPNL.add(formPNL, java.awt.BorderLayout.NORTH);
-
-        tablePNL.setLayout(new java.awt.BorderLayout());
-
-        searchLB.setText("search");
-        searchPNL.add(searchLB);
-
-        searchByCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "category", "date" }));
-        searchPNL.add(searchByCB);
-
-        searchTF.setColumns(15);
-        searchPNL.add(searchTF);
-
-        searchBTN.setText("search");
-        searchPNL.add(searchBTN);
-
-        showAllBTN.setText("show all");
-        searchPNL.add(showAllBTN);
-
-        tablePNL.add(searchPNL, java.awt.BorderLayout.NORTH);
-
-        logTBL.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "id", "category", "item type", "status", "date", "weight"
-            }
-        ));
-        scrollPN.setViewportView(logTBL);
-
-        tablePNL.add(scrollPN, java.awt.BorderLayout.CENTER);
-
-        bottomPNL.setLayout(new java.awt.BorderLayout());
-
-        totalsJL.setText("Footprint: 0.0 kg | Waste: 0.0 kg | Circularity: 0%");
-        bottomPNL.add(totalsJL, java.awt.BorderLayout.WEST);
-
-        deleteBTN.setText("delete");
-        deleteBTN.addActionListener(this::deleteBTNActionPerformed);
-        bottomPNL.add(deleteBTN, java.awt.BorderLayout.EAST);
-
-        tablePNL.add(bottomPNL, java.awt.BorderLayout.SOUTH);
-
-        bodyPNL.add(tablePNL, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(bodyPNL, java.awt.BorderLayout.CENTER);
-
-        pack();
-    }
     private void weightTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_weightTFActionPerformed
@@ -599,18 +435,7 @@ public class LogGUI extends javax.swing.JFrame {
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        /* Create and display the form */
+        //Create and display the form 
         java.awt.EventQueue.invokeLater(() -> new LogGUI().setVisible(true));
     }
 

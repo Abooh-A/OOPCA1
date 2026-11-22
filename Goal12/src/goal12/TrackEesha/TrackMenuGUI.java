@@ -70,53 +70,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void initComponents() {
-
-        topPNL = new javax.swing.JPanel();
-        headPNL = new javax.swing.JPanel();
-        titleJL = new javax.swing.JLabel();
-        navbar1 = new goal12.Navbar();
-        buttonPNL = new javax.swing.JPanel();
-        logBTN = new javax.swing.JButton();
-        benchmarkBTN = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        topPNL.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
-
-        headPNL.setBackground(new java.awt.Color(0, 102, 0));
-        headPNL.setLayout(new java.awt.BorderLayout());
-
-        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("Track");
-        headPNL.add(titleJL, java.awt.BorderLayout.WEST);
-
-        navbar1.setBackground(new java.awt.Color(0, 102, 0));
-        headPNL.add(navbar1, java.awt.BorderLayout.EAST);
-
-        getContentPane().add(headPNL, java.awt.BorderLayout.NORTH);
-
-        buttonPNL.setLayout(new java.awt.GridLayout(2, 1, 0, 20));
-
-        logBTN.setText("Log items");
-        logBTN.addActionListener(this::logBTNActionPerformed);
-        buttonPNL.add(logBTN);
-
-        benchmarkBTN.setText("HouseHold benchmark");
-        benchmarkBTN.addActionListener(this::benchmarkBTNActionPerformed);
-        buttonPNL.add(benchmarkBTN);
-
-        getContentPane().add(buttonPNL, java.awt.BorderLayout.CENTER);
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void logBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBTNActionPerformed
-        new LogGUI().setVisible(true);
-        this.dispose();        
-    }
+    
     private void logBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBTNActionPerformed
         new LogGUI().setVisible(true);
         this.dispose();        
@@ -146,18 +100,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        /* Create and display the form */
+        //Create and display the form 
         java.awt.EventQueue.invokeLater(() -> new TrackMenuGUI().setVisible(true));
     }
 
