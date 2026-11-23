@@ -1,60 +1,1 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package goal12.ActJulieta;
-
-/**
- *
- * @author macbook
- */
-public class User {
-    private String name;
-    private String eircode;
-    private String district;
-    private Recycle listRecycle;
-
-    // CONSTRUCTORS
-    public User() {
-    }
-
-    public User(String name, String eircode) {
-        this.name = name;
-        this.eircode = eircode;
-    }
-
-    public User(String name) {
-        this.name = name;
-    }
-    
-    // SETTERS
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEircode(String eircode) {
-        this.eircode = eircode;
-    }
-    
-    // GETTERS
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEircode() {
-        return eircode;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public Recycle getListRecycle() {
-        return listRecycle;
-    }
-    
-    // Others:
-    
-    
-}
+/* * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template */package goal12.ActJulieta;/** * * @author julieta marina sorrentino */public class User {    private String name;    private String eircode;    private String district;    private Recycle listRecycle;        private String msgVerify;    // CONSTRUCTORS    public User() {    }    public User(String name, String eircode) {        this.name = name;        this.eircode = eircode;    }    public User(String name) {        this.name = name;    }        // SETTERS    public void setName(String name) {        this.name = name;    }    public void setEircode(String eircode) {        this.eircode = eircode;    }        // GETTERS    public String getName() {        return name;    }    public String getEircode() {        return eircode;    }    public String getDistrict() {        return district;    }    public Recycle getListRecycle() {        return listRecycle;    }    public String getMsgVerify() {        return msgVerify;    }                // Others:    public void verificateEircode(){        eircode = eircode.toUpperCase().trim();        int districtToVerify = Integer.parseInt(eircode.substring(1, 3));                //Verifing Eircode        if(eircode.length()>7){            msgVerify = "The length must be 7 digits";        }else if (eircode.charAt(0) != 'D'){            msgVerify = "We only provide specific places for Dublin City, but you will see the links to general info";            district = "0"; // means not in Dublin, but it's not an issue to get the info.         }else if( districtToVerify > 25 ){                        // add check for 6W integer wouldn't work here            msgVerify = "The Eircode is not valid. Try Again";        }else{            district = eircode.substring(0,3);            msgVerify = "Your Eircode has been verified. District: " + district;        }            }// end verificateEircode()        }

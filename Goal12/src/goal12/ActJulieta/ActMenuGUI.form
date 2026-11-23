@@ -23,48 +23,33 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                      <Component id="recyclingBTN" max="32767" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="goSustainableBTN" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nameLBL" max="32767" attributes="0"/>
-                          <Component id="eircodeLBL" min="-2" pref="64" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nameTF" alignment="1" max="32767" attributes="0"/>
-                          <Component id="eircodeTF" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="districtMsgLBL" min="-2" pref="229" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="192" pref="192" max="-2" attributes="0"/>
-                      <Component id="saveUserDetailsBTN" min="-2" pref="109" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace pref="235" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-          </Group>
           <Component id="titleActPNL" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-              <Component id="navbar1" max="32767" attributes="0"/>
+              <Component id="navbar1" pref="433" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="scrollArea" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+              <Component id="recyclingBTN" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="goSustainableBTN" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              <Component id="sessionPanel" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="userDetailsPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,40 +58,19 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="navbar1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="titleActPNL" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Group type="102" alignment="3" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="nameLBL" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="nameTF" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Group type="102" alignment="3" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="eircodeLBL" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="eircodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="3" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="districtMsgLBL" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="saveUserDetailsBTN" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="goSustainableBTN" pref="39" max="32767" attributes="0"/>
+              <Component id="titleActPNL" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="sessionPanel" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="userDetailsPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="goSustainableBTN" max="32767" attributes="0"/>
                   <Component id="recyclingBTN" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="scrollArea" pref="747" max="32767" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+              <Component id="scrollArea" pref="693" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -129,39 +93,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goSustainableBTNActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="nameTF">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameTFActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="eircodeTF">
-    </Component>
-    <Component class="javax.swing.JLabel" name="eircodeLBL">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Eircode"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="nameLBL">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Name"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="districtMsgLBL">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="*Indicate District* or *No Dublin*"/>
-      </Properties>
-    </Component>
     <Component class="goal12.Navbar" name="navbar1">
-    </Component>
-    <Component class="javax.swing.JButton" name="saveUserDetailsBTN">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Save Details"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveUserDetailsBTNActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="titleActPNL">
       <Properties>
@@ -223,9 +155,6 @@
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
-            <Property name="mixingCutoutShape" type="java.awt.Shape" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
           </Properties>
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
@@ -235,10 +164,157 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Reset Details"/>
-      </Properties>
-    </Component>
+    <Container class="javax.swing.JPanel" name="sessionPanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="saveUserDetailsBTN" min="-2" pref="109" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="nameLBL" max="32767" attributes="0"/>
+                              <Component id="eircodeLBL" min="-2" pref="64" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="nameTF" alignment="1" pref="347" max="32767" attributes="0"/>
+                              <Component id="eircodeTF" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="districtMsgLBL" min="-2" pref="229" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="nameLBL" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="nameTF" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="eircodeTF" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="eircodeLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="districtMsgLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="saveUserDetailsBTN" min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="saveUserDetailsBTN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Save Details"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveUserDetailsBTNActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="districtMsgLBL">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="*Indicate District* or *No Dublin*"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nameLBL">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="eircodeLBL">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Eircode"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="eircodeTF">
+        </Component>
+        <Component class="javax.swing.JTextField" name="nameTF">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameTFActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="userDetailsPanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="userNameLBL" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="userDistrictLBL" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                  <Component id="resetDetailsBTN" min="-2" pref="110" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="resetDetailsBTN" alignment="2" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="102" alignment="2" attributes="0">
+                          <Component id="userNameLBL" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <Component id="userDistrictLBL" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="userDistrictLBL">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="district"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="userNameLBL">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="15" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="user name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="resetDetailsBTN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reset Details"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetDetailsBTNActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
