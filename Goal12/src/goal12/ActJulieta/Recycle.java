@@ -6,7 +6,7 @@ package goal12.ActJulieta;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public class Recycle extends EcoAction{
     private String wasteType;

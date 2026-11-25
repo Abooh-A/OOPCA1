@@ -6,7 +6,7 @@ package goal12.ActJulieta;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public class Deposit extends Recycle implements SavingInterface{
     

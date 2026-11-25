@@ -6,7 +6,7 @@ package goal12.ActJulieta;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public class RecyclingGUI extends javax.swing.JPanel {
 
@@ -44,11 +44,6 @@ public class RecyclingGUI extends javax.swing.JPanel {
         deleteBTN = new javax.swing.JButton();
         cleanBTN = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        qLessLBL = new javax.swing.JLabel();
-        qOverLBL = new javax.swing.JLabel();
-        resultLessHalfLitreLBL = new javax.swing.JLabel();
-        resultOverHalfLitreLBL = new javax.swing.JLabel();
-        calculateDepositBTN = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         searchTF = new javax.swing.JTextField();
         selectPlaceLBL = new javax.swing.JLabel();
@@ -57,8 +52,14 @@ public class RecyclingGUI extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         allBTN = new javax.swing.JButton();
         searchBTN1 = new javax.swing.JButton();
+        drsPanel = new javax.swing.JPanel();
+        resultOverHalfLitreLBL = new javax.swing.JLabel();
         qLessSP = new javax.swing.JSpinner();
+        qOverLBL = new javax.swing.JLabel();
+        qLessLBL = new javax.swing.JLabel();
+        calculateDepositBTN = new javax.swing.JButton();
         qOverSP = new javax.swing.JSpinner();
+        resultLessHalfLitreLBL = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,22 +113,6 @@ public class RecyclingGUI extends javax.swing.JPanel {
 
         cleanBTN.setText("Clean Item");
 
-        qLessLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        qLessLBL.setText("150-500ml");
-        qLessLBL.setToolTipText("");
-
-        qOverLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        qOverLBL.setText("Over 500ml");
-
-        resultLessHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        resultLessHalfLitreLBL.setText("= *Result Deposit*");
-
-        resultOverHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        resultOverHalfLitreLBL.setText("= *Result Deposit*");
-
-        calculateDepositBTN.setText("Calculate");
-        calculateDepositBTN.addActionListener(this::calculateDepositBTNActionPerformed);
-
         searchTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         selectPlaceLBL.setText("Select Place");
@@ -154,49 +139,88 @@ public class RecyclingGUI extends javax.swing.JPanel {
 
         searchBTN1.setText("Search");
 
+        resultOverHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        resultOverHalfLitreLBL.setText("= *Result Deposit*");
+
+        qOverLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        qOverLBL.setText("Over 500ml");
+
+        qLessLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        qLessLBL.setText("150-500ml");
+        qLessLBL.setToolTipText("");
+
+        calculateDepositBTN.setText("Calculate");
+        calculateDepositBTN.addActionListener(this::calculateDepositBTNActionPerformed);
+
+        resultLessHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        resultLessHalfLitreLBL.setText("= *Result Deposit*");
+
+        javax.swing.GroupLayout drsPanelLayout = new javax.swing.GroupLayout(drsPanel);
+        drsPanel.setLayout(drsPanelLayout);
+        drsPanelLayout.setHorizontalGroup(
+            drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(drsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(qLessLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(qOverLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(qLessSP)
+                    .addComponent(qOverSP, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(resultLessHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(resultOverHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        drsPanelLayout.setVerticalGroup(
+            drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(drsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(drsPanelLayout.createSequentialGroup()
+                        .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(qLessSP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultLessHalfLitreLBL)
+                            .addComponent(qLessLBL))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(qOverSP, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                            .addComponent(qOverLBL)
+                            .addComponent(resultOverHalfLitreLBL)))
+                    .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator2)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1)
-                            .addComponent(jSeparator2)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(rTitleLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(70, 70, 70))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(wasteTypeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(typeWasteCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(tablePlacesArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(cleanBTN)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(qLessLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(qOverLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(qLessSP, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addComponent(qOverSP))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultLessHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .addComponent(resultOverHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                        .addGap(12, 12, 12)))
+                                .addComponent(rTitleLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(70, 70, 70))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(wasteTypeLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(typeWasteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tablePlacesArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(cleanBTN)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(drsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -212,7 +236,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
                         .addGap(145, 145, 145)
                         .addComponent(modifyBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+                        .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
                     .addComponent(displayArea, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
@@ -250,27 +274,14 @@ public class RecyclingGUI extends javax.swing.JPanel {
                             .addComponent(wasteTypeLBL))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(qLessSP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(resultLessHalfLitreLBL)
-                                    .addComponent(qLessLBL))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(qOverSP, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                                    .addComponent(qOverLBL)
-                                    .addComponent(resultOverHalfLitreLBL)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(drsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(selectPlaceLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -324,6 +335,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
     private javax.swing.JButton deleteBTN;
     private javax.swing.JScrollPane displayArea;
     private javax.swing.JList<String> displayListLST;
+    private javax.swing.JPanel drsPanel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
