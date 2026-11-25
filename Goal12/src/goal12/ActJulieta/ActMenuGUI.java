@@ -21,8 +21,8 @@ public class ActMenuGUI extends javax.swing.JFrame {
     private String msgVerify = "";
     private String district = "";
     
-    //Info Session User
-    User myUser;
+    //Info Session User - only one 
+    static User myUser;
     
     /**
      * Creates new form ActMenuGUI
@@ -47,6 +47,11 @@ public class ActMenuGUI extends javax.swing.JFrame {
         
     }
 
+    public static User getMyUser() {
+        return myUser;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,7 +70,8 @@ public class ActMenuGUI extends javax.swing.JFrame {
         sectionsPanel = new javax.swing.JPanel();
         sessionPanel = new javax.swing.JPanel();
         saveUserDetailsBTN = new javax.swing.JButton();
-        districtMsgLBL = new javax.swing.JLabel();
+        errorMsgEircodeLBL = new javax.swing.JLabel();
+        errorMsgNameLBL = new javax.swing.JLabel();
         nameLBL = new javax.swing.JLabel();
         eircodeLBL = new javax.swing.JLabel();
         eircodeTF = new javax.swing.JTextField();
@@ -75,7 +81,8 @@ public class ActMenuGUI extends javax.swing.JFrame {
         userNameLBL = new javax.swing.JLabel();
         resetDetailsBTN = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
 
         recyclingBTN.setText("Recycling-to-do");
         recyclingBTN.addActionListener(this::recyclingBTNActionPerformed);
@@ -116,10 +123,19 @@ public class ActMenuGUI extends javax.swing.JFrame {
         scrollArea.setViewportView(sectionsPanel);
         sectionsPanel.getAccessibleContext().setAccessibleDescription("");
 
+        sessionPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        sessionPanel.setMixingCutoutShape(null);
+
         saveUserDetailsBTN.setText("Save Details");
         saveUserDetailsBTN.addActionListener(this::saveUserDetailsBTNActionPerformed);
 
-        districtMsgLBL.setText("*Indicate District* or *No Dublin*");
+        errorMsgEircodeLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        errorMsgEircodeLBL.setForeground(new java.awt.Color(204, 0, 51));
+        errorMsgEircodeLBL.setText("ddd");
+
+        errorMsgNameLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        errorMsgNameLBL.setForeground(new java.awt.Color(204, 0, 51));
+        errorMsgNameLBL.setText("ddd");
 
         nameLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nameLBL.setText("Name");
@@ -135,47 +151,46 @@ public class ActMenuGUI extends javax.swing.JFrame {
             sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sessionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sessionPanelLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sessionPanelLayout.createSequentialGroup()
-                        .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nameLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eircodeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                            .addComponent(eircodeTF, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(districtMsgLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nameLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eircodeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eircodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(errorMsgEircodeLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(errorMsgNameLBL))
                 .addContainerGap())
         );
         sessionPanelLayout.setVerticalGroup(
             sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sessionPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sessionPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(nameLBL))
-                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(errorMsgNameLBL)
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameLBL))
+                .addGap(6, 6, 6)
+                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(errorMsgEircodeLBL)
+                    .addComponent(eircodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eircodeLBL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eircodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(sessionPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(sessionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eircodeLBL)
-                            .addComponent(districtMsgLBL))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(saveUserDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        userDetailsPanel.setToolTipText("");
+        userDetailsPanel.setMixingCutoutShape(null);
+
+        userDistrictLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        userDistrictLBL.setForeground(new java.awt.Color(102, 102, 102));
         userDistrictLBL.setText("district");
 
-        userNameLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        userNameLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         userNameLBL.setText("user name");
 
         resetDetailsBTN.setText("Reset Details");
@@ -190,9 +205,9 @@ public class ActMenuGUI extends javax.swing.JFrame {
                 .addGroup(userDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(userNameLBL)
                     .addComponent(userDistrictLBL))
-                .addGap(134, 134, 134)
+                .addGap(57, 57, 57)
                 .addComponent(resetDetailsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         userDetailsPanelLayout.setVerticalGroup(
             userDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,26 +229,26 @@ public class ActMenuGUI extends javax.swing.JFrame {
             .addComponent(titleActPNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(180, 180, 180)
-                .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(179, 179, 179))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrollArea)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(103, 103, 103)
                 .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(81, 81, 81)
                 .addComponent(goSustainableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(128, 128, 128))
+                .addGap(104, 104, 104))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(283, 283, 283)
+                .addComponent(userDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(221, 221, 221))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(245, 245, 245)
                 .addComponent(sessionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(62, 62, 62))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(userDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,15 +258,15 @@ public class ActMenuGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(titleActPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sessionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sessionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(userDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(goSustainableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(goSustainableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(scrollArea, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
+                .addComponent(scrollArea, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
         );
 
@@ -273,7 +288,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
     private void goSustainableBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goSustainableBTNActionPerformed
         // TODO add your handling code here:
         scrollArea.setVisible(true);
-        //sectionsPanel.setVisible(true);
+
         getContentPane().revalidate(); 
         getContentPane().repaint(); 
         
@@ -283,41 +298,66 @@ public class ActMenuGUI extends javax.swing.JFrame {
 
     private void saveUserDetailsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveUserDetailsBTNActionPerformed
         // TODO add your handling code here:
+        //clean fields (in case there is any all error message):
+        errorMsgNameLBL.setText("");
+        errorMsgEircodeLBL.setText("");
+        
+        User tempUser = new User();
         
         // only is the fields are not empty
         if((nameTF.getText()).isEmpty() == false && (eircodeTF.getText()).isEmpty()== false){
-            
-            User tempUser = new User();
 
             tempUser.setEircode(eircodeTF.getText());
+            tempUser.setName(nameTF.getText());
             tempUser.verificateEircode();
 
             msgVerify = tempUser.getMsgVerify();
             district = tempUser.getDistrict();
-
+            
             // means it was verified: 
             if(district.isEmpty() == false){
-                tempUser.setName(nameTF.getText());
-
+                
                 // once the 'session' was open this field and buttons are not available
                 sessionPanel.setVisible(false);
                 
                 //save the session:
                 myUser = tempUser;
+                
                 //set the information in the labels: 
                 userNameLBL.setText(myUser.getName());
-                if(district == "0"){
+                
+                if(district.equals("0")){
                     userDistrictLBL.setText(msgVerify);
                 }else{
                     userDistrictLBL.setText(myUser.getDistrict());
                 }
+                
                 // make the User Details Panel visible:
                 userDetailsPanel.setVisible(true);
-                        
+                
+                //clean fields:
+                nameTF.setText("");
+                eircodeTF.setText("");
+
+            }else{
+                errorMsgEircodeLBL.setText(msgVerify);
+                 
             }// end if statement for open user session
             
+
+            
+        }else{
+            if(nameTF.getText().isEmpty()){
+                errorMsgNameLBL.setText("You need to enter your name");
+            }
+            
+            if(eircodeTF.getText().isEmpty()){
+                errorMsgEircodeLBL.setText("You need to enter your eircode");
+            }
+                 
         }
-    // end of saveUserDetails button   
+
+        // end of saveUserDetails button   
     }//GEN-LAST:event_saveUserDetailsBTNActionPerformed
 
     private void nameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTFActionPerformed
@@ -326,6 +366,11 @@ public class ActMenuGUI extends javax.swing.JFrame {
 
     private void resetDetailsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetDetailsBTNActionPerformed
         // TODO add your handling code here:
+        myUser = new User();
+        
+        userDetailsPanel.setVisible(false);
+        sessionPanel.setVisible(true);
+        
     }//GEN-LAST:event_resetDetailsBTNActionPerformed
 
     /**
@@ -354,9 +399,10 @@ public class ActMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel districtMsgLBL;
     private javax.swing.JLabel eircodeLBL;
     private javax.swing.JTextField eircodeTF;
+    private javax.swing.JLabel errorMsgEircodeLBL;
+    private javax.swing.JLabel errorMsgNameLBL;
     private javax.swing.JButton goSustainableBTN;
     private javax.swing.JLabel nameLBL;
     private javax.swing.JTextField nameTF;

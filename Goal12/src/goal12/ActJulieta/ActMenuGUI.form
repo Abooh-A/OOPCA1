@@ -2,7 +2,8 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="alwaysOnTop" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -26,7 +27,7 @@
           <Component id="titleActPNL" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-              <Component id="navbar1" pref="433" max="32767" attributes="0"/>
+              <Component id="navbar1" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -35,21 +36,21 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
               <Component id="recyclingBTN" max="32767" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               <Component id="goSustainableBTN" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
+              <Component id="userDetailsPanel" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
               <Component id="sessionPanel" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="userDetailsPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,17 +61,17 @@
               <Component id="navbar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="titleActPNL" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="sessionPanel" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="userDetailsPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="goSustainableBTN" max="32767" attributes="0"/>
-                  <Component id="recyclingBTN" max="32767" attributes="0"/>
+              <Component id="sessionPanel" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="userDetailsPanel" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="recyclingBTN" alignment="3" pref="39" max="32767" attributes="0"/>
+                  <Component id="goSustainableBTN" alignment="3" pref="39" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Component id="scrollArea" pref="693" max="32767" attributes="0"/>
+              <Component id="scrollArea" pref="654" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -165,60 +166,57 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="sessionPanel">
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Default Cursor"/>
+        </Property>
+        <Property name="mixingCutoutShape" type="java.awt.Shape" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="null"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="saveUserDetailsBTN" min="-2" pref="109" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="nameLBL" max="32767" attributes="0"/>
-                              <Component id="eircodeLBL" min="-2" pref="64" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="nameTF" alignment="1" pref="347" max="32767" attributes="0"/>
-                              <Component id="eircodeTF" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="districtMsgLBL" min="-2" pref="229" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="nameLBL" max="32767" attributes="0"/>
+                      <Component id="eircodeLBL" min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="saveUserDetailsBTN" alignment="2" min="-2" pref="109" max="-2" attributes="0"/>
+                      <Component id="nameTF" alignment="2" min="-2" pref="199" max="-2" attributes="0"/>
+                      <Component id="eircodeTF" alignment="2" min="-2" pref="199" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="errorMsgEircodeLBL" min="-2" pref="209" max="-2" attributes="0"/>
+                      <Component id="errorMsgNameLBL" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="nameLBL" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="nameTF" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="errorMsgNameLBL" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="nameTF" alignment="2" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="nameLBL" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="eircodeTF" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="eircodeLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="districtMsgLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="errorMsgEircodeLBL" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="eircodeTF" alignment="2" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="eircodeLBL" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="saveUserDetailsBTN" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="saveUserDetailsBTN" min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -232,9 +230,26 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveUserDetailsBTNActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="districtMsgLBL">
+        <Component class="javax.swing.JLabel" name="errorMsgEircodeLBL">
           <Properties>
-            <Property name="text" type="java.lang.String" value="*Indicate District* or *No Dublin*"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="12" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ddd"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="errorMsgNameLBL">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="12" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ddd"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="nameLBL">
@@ -259,6 +274,12 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="userDetailsPanel">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="mixingCutoutShape" type="java.awt.Shape" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="null"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -269,9 +290,9 @@
                       <Component id="userNameLBL" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="userDistrictLBL" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="resetDetailsBTN" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -295,13 +316,19 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="userDistrictLBL">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="12" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="district"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="userNameLBL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="15" style="0"/>
+              <Font name="Helvetica Neue" size="16" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="user name"/>
           </Properties>

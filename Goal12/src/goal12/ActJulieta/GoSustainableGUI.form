@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
@@ -32,50 +32,15 @@
                       <Component id="ideaLBL" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="resultSavingsLBL" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="calculateSavingBTN" alignment="2" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="discountRB" max="32767" attributes="0"/>
-                                      <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="stampsRB" max="32767" attributes="0"/>
-                                      <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="avgPriceLBL" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="coffeesPerWeekLBL" max="32767" attributes="0"/>
-                                              <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="coffeesPerWeekTF" max="32767" attributes="0"/>
-                                          <Component id="avgPriceTF" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="coffeePanel" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tablePlacesArea" pref="482" max="32767" attributes="0"/>
+                  <Component id="tablePlacesArea" pref="465" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="placesLBL" min="-2" pref="147" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -117,45 +82,24 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="coffeesPerWeekTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="coffeesPerWeekLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="avgPriceLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="avgPriceTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="stampsRB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="discountRB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="calculateSavingBTN" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="resultSavingsLBL" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="optionsCoffeeDiscountGRB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="placesLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="allLocationBTN" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="tablePlacesArea" min="-2" pref="208" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="optionsCoffeeDiscountGRB" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="placesLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="allLocationBTN" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="tablePlacesArea" min="-2" pref="208" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="93" max="32767" attributes="0"/>
-                      <Component id="jSeparator1" min="-2" pref="353" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="coffeePanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator1" min="-2" pref="388" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -247,38 +191,9 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JRadioButton" name="stampsRB">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Stamps for a Free Coffee"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="discountRB">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Discount on each Coffee"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Properties>
         <Property name="orientation" type="int" value="1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="coffeesPerWeekTF">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coffeesPerWeekTFActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="coffeesPerWeekLBL">
-      <Properties>
-        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="coffeesPerWeekTF"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Coffees for week"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="tablePlacesArea">
@@ -339,13 +254,6 @@
         <Property name="text" type="java.lang.String" value="ALL"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="avgPriceLBL">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Average Price per each"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="avgPriceTF">
-    </Component>
     <Component class="javax.swing.JLabel" name="subtitleSustainable">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -358,18 +266,187 @@
         <Property name="text" type="java.lang.String" value="Check the small changes you can make to transform your plan to sustainable friendly"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="calculateSavingBTN">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Calculate Weekly Savings"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateSavingBTNActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="resultSavingsLBL">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="*RESULT OF SAVINGS*"/>
-      </Properties>
-    </Component>
+    <Container class="javax.swing.JPanel" name="coffeePanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jScrollPane1" alignment="2" pref="219" max="32767" attributes="0"/>
+                      <Component id="calculateSavingBTN" alignment="2" max="32767" attributes="0"/>
+                      <Component id="errorMsgCoffeeLBL" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="discountRB" max="32767" attributes="0"/>
+                          <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="stampsRB" max="32767" attributes="0"/>
+                          <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="avgPriceLBL" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="coffeesPerWeekLBL" max="32767" attributes="0"/>
+                                  <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="coffeesPerWeekTF" max="32767" attributes="0"/>
+                              <Component id="avgPriceTF" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="coffeesPerWeekTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="coffeesPerWeekLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="avgPriceLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="avgPriceTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="stampsRB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="discountRB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="errorMsgCoffeeLBL" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="calculateSavingBTN" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="166" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JRadioButton" name="stampsRB">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Stamps for a Free Coffee"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="resultSavingsTA">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                </Property>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                    <EmptyBorder/>
+                  </Border>
+                </Property>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JRadioButton" name="discountRB">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Discount on each Coffee"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="avgPriceLBL">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Average Price per each"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="calculateSavingBTN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Calculate Weekly Savings"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateSavingBTNActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="coffeesPerWeekTF">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coffeesPerWeekTFActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="resultSavingsTA">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                </Property>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                    <EmptyBorder/>
+                  </Border>
+                </Property>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="coffeesPerWeekLBL">
+          <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="coffeesPerWeekTF"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Coffees for week"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="avgPriceTF">
+        </Component>
+        <Component class="javax.swing.JLabel" name="errorMsgCoffeeLBL">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="12" style="2"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="warning"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

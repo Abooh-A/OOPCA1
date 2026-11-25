@@ -10,4 +10,6 @@ package goal12.ActJulieta;
  */
 public interface SavingInterface {
     
+    public void calculateSavings();
+    
 }

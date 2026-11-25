@@ -8,15 +8,27 @@ package goal12.ActJulieta;
  *
  * @author macbook
  */
-public abstract class CoffeeIdea extends Idea {
+public abstract class CoffeeIdea extends Idea{
     protected int timesPerWeek;
     protected double avgPrice;
+    protected double totalSavings;
+    protected double spentWeekly;
 
     // CONSTRUCTORS
     protected CoffeeIdea() {
     }
 
+    protected CoffeeIdea(int timesPerWeek, double avgPrice, String activity, String description, String placeType) {
+        super(activity, description, placeType);
+        this.timesPerWeek = timesPerWeek;
+        this.avgPrice = avgPrice;
+    }
 
+    protected CoffeeIdea(int timesPerWeek, double avgPrice) {
+        this.timesPerWeek = timesPerWeek;
+        this.avgPrice = avgPrice;
+    }
+    
     
     // SETTERS
 
@@ -28,6 +40,30 @@ public abstract class CoffeeIdea extends Idea {
         this.avgPrice = avgPrice;
     }
     
+    // GETTERS
+
+    public int getTimesPerWeek() {
+        return timesPerWeek;
+    }
+
+    public double getAvgPrice() {
+        return avgPrice;
+    }
+
+    public double getTotalSavings() {
+        return totalSavings;
+    }
     
+    
+    
+    
+    //Others
+    protected void calculateWeekly(){
+        spentWeekly = timesPerWeek * avgPrice;
+    }
+    
+
+    //Abstract
+    public abstract String[] displayDetails();
     
 }

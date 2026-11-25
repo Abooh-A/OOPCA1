@@ -16,6 +16,7 @@ public class GoSustainableGUI extends javax.swing.JPanel {
     public GoSustainableGUI() {
         initComponents();
         setSize(750,700);
+       
     }
 
     /**
@@ -33,20 +34,25 @@ public class GoSustainableGUI extends javax.swing.JPanel {
         ideasCB = new javax.swing.JComboBox<>();
         optionsCoffeeDiscountGRB = new javax.swing.JScrollPane();
         infoIdeaTA = new javax.swing.JTextArea();
-        stampsRB = new javax.swing.JRadioButton();
-        discountRB = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
-        coffeesPerWeekTF = new javax.swing.JTextField();
-        coffeesPerWeekLBL = new javax.swing.JLabel();
         tablePlacesArea = new javax.swing.JScrollPane();
         placesTBL = new javax.swing.JTable();
         placesLBL = new javax.swing.JLabel();
         allLocationBTN = new javax.swing.JButton();
-        avgPriceLBL = new javax.swing.JLabel();
-        avgPriceTF = new javax.swing.JTextField();
         subtitleSustainable = new javax.swing.JLabel();
+        coffeePanel = new javax.swing.JPanel();
+        stampsRB = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        resultSavingsTA = new javax.swing.JTextArea();
+        discountRB = new javax.swing.JRadioButton();
+        avgPriceLBL = new javax.swing.JLabel();
         calculateSavingBTN = new javax.swing.JButton();
-        resultSavingsLBL = new javax.swing.JLabel();
+        coffeesPerWeekTF = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        resultSavingsTA = new javax.swing.JTextArea();
+        coffeesPerWeekLBL = new javax.swing.JLabel();
+        avgPriceTF = new javax.swing.JTextField();
+        errorMsgCoffeeLBL = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(799, 556));
 
@@ -80,18 +86,7 @@ public class GoSustainableGUI extends javax.swing.JPanel {
         optionsCoffeeDiscountGRB.setViewportView(infoIdeaTA);
         infoIdeaTA.getAccessibleContext().setAccessibleParent(this);
 
-        buttonGroup1.add(stampsRB);
-        stampsRB.setText("Stamps for a Free Coffee");
-
-        buttonGroup1.add(discountRB);
-        discountRB.setText("Discount on each Coffee");
-
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-
-        coffeesPerWeekTF.addActionListener(this::coffeesPerWeekTFActionPerformed);
-
-        coffeesPerWeekLBL.setLabelFor(coffeesPerWeekTF);
-        coffeesPerWeekLBL.setText("Coffees for week");
 
         placesTBL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,17 +105,104 @@ public class GoSustainableGUI extends javax.swing.JPanel {
 
         allLocationBTN.setText("ALL");
 
-        avgPriceLBL.setText("Average Price per each");
-
         subtitleSustainable.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         subtitleSustainable.setForeground(new java.awt.Color(102, 102, 102));
         subtitleSustainable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subtitleSustainable.setText("Check the small changes you can make to transform your plan to sustainable friendly");
 
+        buttonGroup1.add(stampsRB);
+        stampsRB.setText("Stamps for a Free Coffee");
+
+        resultSavingsTA.setBackground(new java.awt.Color(242, 242, 242));
+        resultSavingsTA.setColumns(20);
+        resultSavingsTA.setLineWrap(true);
+        resultSavingsTA.setRows(5);
+        resultSavingsTA.setWrapStyleWord(true);
+        resultSavingsTA.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        resultSavingsTA.setOpaque(false);
+        jScrollPane1.setViewportView(resultSavingsTA);
+
+        buttonGroup1.add(discountRB);
+        discountRB.setText("Discount on each Coffee");
+
+        avgPriceLBL.setText("Average Price per each");
+
         calculateSavingBTN.setText("Calculate Weekly Savings");
         calculateSavingBTN.addActionListener(this::calculateSavingBTNActionPerformed);
 
-        resultSavingsLBL.setText("*RESULT OF SAVINGS*");
+        coffeesPerWeekTF.addActionListener(this::coffeesPerWeekTFActionPerformed);
+
+        resultSavingsTA.setBackground(new java.awt.Color(242, 242, 242));
+        resultSavingsTA.setColumns(20);
+        resultSavingsTA.setLineWrap(true);
+        resultSavingsTA.setRows(5);
+        resultSavingsTA.setWrapStyleWord(true);
+        resultSavingsTA.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        resultSavingsTA.setOpaque(false);
+        jScrollPane1.setViewportView(resultSavingsTA);
+
+        coffeesPerWeekLBL.setLabelFor(coffeesPerWeekTF);
+        coffeesPerWeekLBL.setText("Coffees for week");
+
+        errorMsgCoffeeLBL.setFont(new java.awt.Font("Helvetica Neue", 2, 12)); // NOI18N
+        errorMsgCoffeeLBL.setForeground(new java.awt.Color(204, 0, 0));
+        errorMsgCoffeeLBL.setText("warning");
+
+        javax.swing.GroupLayout coffeePanelLayout = new javax.swing.GroupLayout(coffeePanel);
+        coffeePanel.setLayout(coffeePanelLayout);
+        coffeePanelLayout.setHorizontalGroup(
+            coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coffeePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                    .addComponent(calculateSavingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(errorMsgCoffeeLBL))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(coffeePanelLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(coffeePanelLayout.createSequentialGroup()
+                        .addComponent(discountRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39))
+                    .addGroup(coffeePanelLayout.createSequentialGroup()
+                        .addComponent(stampsRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(36, 36, 36))
+                    .addGroup(coffeePanelLayout.createSequentialGroup()
+                        .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avgPriceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(coffeePanelLayout.createSequentialGroup()
+                                .addComponent(coffeesPerWeekLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(36, 36, 36)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(coffeesPerWeekTF)
+                            .addComponent(avgPriceTF))))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        coffeePanelLayout.setVerticalGroup(
+            coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coffeePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(coffeesPerWeekTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(coffeesPerWeekLBL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(avgPriceLBL)
+                    .addComponent(avgPriceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addComponent(stampsRB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(discountRB)
+                .addGap(10, 10, 10)
+                .addComponent(errorMsgCoffeeLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculateSavingBTN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -132,37 +214,13 @@ public class GoSustainableGUI extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ideaLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                    .addComponent(resultSavingsLBL)
-                                    .addComponent(calculateSavingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(discountRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(39, 39, 39))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(stampsRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(36, 36, 36))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(avgPriceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(coffeesPerWeekLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGap(36, 36, 36)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(coffeesPerWeekTF)
-                                            .addComponent(avgPriceTF))))
-                                .addGap(9, 9, 9)))
+                        .addGap(23, 23, 23)
+                        .addComponent(coffeePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablePlacesArea, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                    .addComponent(tablePlacesArea, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(placesLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -194,38 +252,21 @@ public class GoSustainableGUI extends javax.swing.JPanel {
                     .addComponent(ideasCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(coffeesPerWeekTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(coffeesPerWeekLBL))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(avgPriceLBL)
-                                    .addComponent(avgPriceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(19, 19, 19)
-                                .addComponent(stampsRB)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(discountRB)
-                                .addGap(18, 18, 18)
-                                .addComponent(calculateSavingBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(resultSavingsLBL))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(optionsCoffeeDiscountGRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(placesLBL)
-                                    .addComponent(allLocationBTN))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(54, 54, 54))
+                        .addGap(6, 6, 6)
+                        .addComponent(optionsCoffeeDiscountGRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(placesLBL)
+                            .addComponent(allLocationBTN))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(coffeePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -235,6 +276,49 @@ public class GoSustainableGUI extends javax.swing.JPanel {
 
     private void calculateSavingBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateSavingBTNActionPerformed
         // TODO add your handling code here:
+        
+        //clean fields first
+        resultSavingsTA.setText("");
+        errorMsgCoffeeLBL.setText("");
+        
+        //declare msg 
+        String[] msg = new String[4];
+        
+        if ( !(coffeesPerWeekTF.getText()).isEmpty() && !(avgPriceTF.getText()).isEmpty() ){
+            
+            //add checks for int and double
+            
+            int timesPerWeek = Integer.parseInt(coffeesPerWeekTF.getText());
+            double avgPrice = Double.parseDouble(avgPriceTF.getText());
+            
+            if(stampsRB.isSelected()){ // (times, avg)
+                CoffeeStamp tempCoffeeS = new CoffeeStamp(timesPerWeek, avgPrice);
+                tempCoffeeS.calculateSavings();
+                
+                msg = tempCoffeeS.displayDetails();       
+            }// end CoffeeStamps option
+            
+            
+            if(discountRB.isSelected()){ // (times, avg)
+                CoffeeDiscount tempCoffeeD = new CoffeeDiscount(timesPerWeek, avgPrice);
+                tempCoffeeD.calculateSavings();
+                
+                msg = tempCoffeeD.displayDetails();
+
+            }// end CoffeeDiscount option
+            
+            
+            //printing results
+            for(int i = 0; i < msg.length; i++){
+                resultSavingsTA.append(msg[i]);
+                resultSavingsTA.append("\n");
+            }
+        
+        }else{
+            errorMsgCoffeeLBL.setText("You need to fill the fields and choose an option");
+        }
+        
+        
     }//GEN-LAST:event_calculateSavingBTNActionPerformed
 
 
@@ -244,17 +328,20 @@ public class GoSustainableGUI extends javax.swing.JPanel {
     private javax.swing.JTextField avgPriceTF;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton calculateSavingBTN;
+    private javax.swing.JPanel coffeePanel;
     private javax.swing.JLabel coffeesPerWeekLBL;
     private javax.swing.JTextField coffeesPerWeekTF;
     private javax.swing.JRadioButton discountRB;
+    private javax.swing.JLabel errorMsgCoffeeLBL;
     private javax.swing.JLabel ideaLBL;
     private javax.swing.JComboBox<String> ideasCB;
     private javax.swing.JTextArea infoIdeaTA;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JScrollPane optionsCoffeeDiscountGRB;
     private javax.swing.JLabel placesLBL;
     private javax.swing.JTable placesTBL;
-    private javax.swing.JLabel resultSavingsLBL;
+    private javax.swing.JTextArea resultSavingsTA;
     private javax.swing.JRadioButton stampsRB;
     private javax.swing.JLabel subtitleSustainable;
     private javax.swing.JLabel subtitleSustainableLBL;
