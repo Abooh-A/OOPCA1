@@ -16,6 +16,9 @@ public class RecyclingGUI extends javax.swing.JPanel {
     public RecyclingGUI() {
         initComponents();
         setSize(750,700);
+        
+        
+        //clear the fields
     }
 
     /**
@@ -41,10 +44,8 @@ public class RecyclingGUI extends javax.swing.JPanel {
         deleteBTN = new javax.swing.JButton();
         cleanBTN = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        lessHalfLitreTF = new javax.swing.JTextField();
-        overHalfLitreTF = new javax.swing.JTextField();
-        lessHalfLitreLBL = new javax.swing.JLabel();
-        overHalfLitreLBL = new javax.swing.JLabel();
+        qLessLBL = new javax.swing.JLabel();
+        qOverLBL = new javax.swing.JLabel();
         resultLessHalfLitreLBL = new javax.swing.JLabel();
         resultOverHalfLitreLBL = new javax.swing.JLabel();
         calculateDepositBTN = new javax.swing.JButton();
@@ -56,6 +57,8 @@ public class RecyclingGUI extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         allBTN = new javax.swing.JButton();
         searchBTN1 = new javax.swing.JButton();
+        qLessSP = new javax.swing.JSpinner();
+        qOverSP = new javax.swing.JSpinner();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,17 +112,17 @@ public class RecyclingGUI extends javax.swing.JPanel {
 
         cleanBTN.setText("Clean Item");
 
-        lessHalfLitreTF.addActionListener(this::lessHalfLitreTFActionPerformed);
+        qLessLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        qLessLBL.setText("150-500ml");
+        qLessLBL.setToolTipText("");
 
-        lessHalfLitreLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lessHalfLitreLBL.setText("150-500ml");
-        lessHalfLitreLBL.setToolTipText("");
+        qOverLBL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        qOverLBL.setText("Over 500ml");
 
-        overHalfLitreLBL.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        overHalfLitreLBL.setText("Over 500ml ");
-
+        resultLessHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         resultLessHalfLitreLBL.setText("= *Result Deposit*");
 
+        resultOverHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         resultOverHalfLitreLBL.setText("= *Result Deposit*");
 
         calculateDepositBTN.setText("Calculate");
@@ -157,25 +160,6 @@ public class RecyclingGUI extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(overHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lessHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(10, 10, 10)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lessHalfLitreTF, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(resultLessHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(overHalfLitreTF)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(resultOverHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +180,23 @@ public class RecyclingGUI extends javax.swing.JPanel {
                                         .addComponent(cleanBTN)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(qLessLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(qOverLBL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(qLessSP, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                            .addComponent(qOverSP))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(resultLessHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                            .addComponent(resultOverHalfLitreLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                        .addGap(12, 12, 12)))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -212,7 +212,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
                         .addGap(145, 145, 145)
                         .addComponent(modifyBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                        .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
                     .addComponent(displayArea, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
@@ -252,21 +252,20 @@ public class RecyclingGUI extends javax.swing.JPanel {
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lessHalfLitreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lessHalfLitreLBL)
-                                    .addComponent(resultLessHalfLitreLBL))
+                                    .addComponent(qLessSP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(resultLessHalfLitreLBL)
+                                    .addComponent(qLessLBL))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(overHalfLitreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(overHalfLitreLBL)
-                                    .addComponent(resultOverHalfLitreLBL))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)))
+                                    .addComponent(qOverSP, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                                    .addComponent(qOverLBL)
+                                    .addComponent(resultOverHalfLitreLBL)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(selectPlaceLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,12 +291,24 @@ public class RecyclingGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteBTNActionPerformed
 
-    private void lessHalfLitreTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessHalfLitreTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lessHalfLitreTFActionPerformed
-
     private void calculateDepositBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateDepositBTNActionPerformed
         // TODO add your handling code here:
+
+        //resultLessHalfLitreLBL.setText("");
+        //resultOverHalfLitreLBL.setText("");
+        
+        int qLess;
+        int qOver;
+
+        qLess = (Integer) qLessSP.getValue();
+        qOver = (Integer) qOverSP.getValue();
+
+        Deposit tempDep = new Deposit(qLess, qOver);
+        tempDep.calculateSavings();
+
+        resultLessHalfLitreLBL.setText("= €" + String.valueOf(tempDep.getDepositLess()) );
+        resultOverHalfLitreLBL.setText("= €" + String.valueOf(tempDep.getDepositOver()) );
+
     }//GEN-LAST:event_calculateDepositBTNActionPerformed
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
@@ -319,11 +330,11 @@ public class RecyclingGUI extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JLabel lessHalfLitreLBL;
-    private javax.swing.JTextField lessHalfLitreTF;
     private javax.swing.JButton modifyBTN;
-    private javax.swing.JLabel overHalfLitreLBL;
-    private javax.swing.JTextField overHalfLitreTF;
+    private javax.swing.JLabel qLessLBL;
+    private javax.swing.JSpinner qLessSP;
+    private javax.swing.JLabel qOverLBL;
+    private javax.swing.JSpinner qOverSP;
     private javax.swing.JLabel rTitleLBL;
     private javax.swing.JLabel resultLessHalfLitreLBL;
     private javax.swing.JLabel resultOverHalfLitreLBL;

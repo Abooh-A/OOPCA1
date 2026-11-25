@@ -4,11 +4,13 @@
  */
 package goal12.ActJulieta;
 
+import java.io.Serializable;
+
 /**
  *
  * @author macbook
  */
-public class Place {
+public class Place implements Serializable {
     private String name, address, placeType, district, info, link;
     
     // CONSTRUCTOR
@@ -46,5 +48,9 @@ public class Place {
     public String getLink() {
         return link;
     }
+    
+    
+    
+    //
     
 }

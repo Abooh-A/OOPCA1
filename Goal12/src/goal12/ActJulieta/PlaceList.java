@@ -4,10 +4,12 @@
  */
 package goal12.ActJulieta;
 
+import java.io.Serializable;
+
 /**
  *
  * @author macbook
  */
-public class PlaceList {
+public class PlaceList implements Serializable{
     
 }

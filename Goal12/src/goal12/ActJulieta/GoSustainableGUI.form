@@ -26,21 +26,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="ideaLBL" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="coffeePanel" max="32767" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="ideaLBL" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="coffeePanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tablePlacesArea" pref="465" max="32767" attributes="0"/>
+                  <Component id="tablePlacesArea" pref="443" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="placesLBL" min="-2" pref="147" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -271,15 +268,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="jScrollPane1" alignment="2" pref="219" max="32767" attributes="0"/>
-                      <Component id="calculateSavingBTN" alignment="2" max="32767" attributes="0"/>
-                      <Component id="errorMsgCoffeeLBL" alignment="2" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -306,7 +294,16 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="errorMsgCoffeeLBL" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="calculateSavingBTN" alignment="2" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="2" pref="230" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="11" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -383,7 +380,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="avgPriceLBL">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Average Price per each"/>
+            <Property name="text" type="java.lang.String" value="Average Price per coffee"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="calculateSavingBTN">
