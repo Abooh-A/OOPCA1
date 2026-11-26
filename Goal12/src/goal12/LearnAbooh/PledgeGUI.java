@@ -64,6 +64,7 @@ public class PledgeGUI extends javax.swing.JFrame {
         searchBTN = new javax.swing.JButton();
         newPledgeTF = new javax.swing.JTextField();
         oneTimePlgRB = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,7 +81,7 @@ public class PledgeGUI extends javax.swing.JFrame {
             .addGroup(titlePNLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titleLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 302, Short.MAX_VALUE)
                 .addComponent(learnNavbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -203,23 +204,35 @@ public class PledgeGUI extends javax.swing.JFrame {
 
         jPanel1.add(controlsPNL, new java.awt.GridBagConstraints());
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("OBAAPANIN AKOSUA ABOOH AGYEKUM");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(navbar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(titlePNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(10, 10, 10)
                 .addComponent(titlePNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(412, 412, 412))
+                .addGap(385, 385, 385))
         );
 
         pack();
@@ -267,37 +280,20 @@ public class PledgeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel contentPNL;
-    private javax.swing.JPanel contentPNL1;
     private javax.swing.JPanel controlsPNL;
     private javax.swing.JButton deletePlgBTN;
     private javax.swing.JButton editPlgBTN;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private goal12.LearnAbooh.learnNavbar learnNavbar;
     private goal12.Navbar navbar1;
     private javax.swing.JTextField newPledgeTF;
-    private javax.swing.JButton nextBTN;
-    private javax.swing.JButton nextBTN1;
     private javax.swing.JRadioButton oneTimePlgRB;
     private javax.swing.JRadioButton ongoingPlgRB;
-    private javax.swing.JRadioButton option1RB;
-    private javax.swing.JRadioButton option1RB1;
-    private javax.swing.JRadioButton option2RB;
-    private javax.swing.JRadioButton option2RB1;
-    private javax.swing.JRadioButton option3RB;
-    private javax.swing.JRadioButton option3RB1;
-    private javax.swing.JRadioButton option4RB;
-    private javax.swing.JRadioButton option4RB1;
     private javax.swing.JButton pledgeCrteBTN;
     private javax.swing.JTable pledgeTBL;
     private javax.swing.JScrollPane pledgeTblSP;
     private javax.swing.ButtonGroup pledgeTypeBG;
-    private javax.swing.JLabel questionLBL;
-    private javax.swing.JLabel questionLBL1;
-    private javax.swing.JProgressBar quizPB;
-    private javax.swing.JProgressBar quizPB1;
-    private javax.swing.JPanel quizPNL;
-    private javax.swing.JPanel quizPNL1;
     private javax.swing.JButton searchBTN;
     private javax.swing.JTextField searchPlgTF;
     private javax.swing.JLabel titleLBL;
