@@ -32,6 +32,6 @@ public abstract class Question {
 
     public abstract String[] getOptions();
 
-    public abstract boolean checkAnswer(String answer);
+    public abstract boolean checkAnswer(int selectedAnswer);
 
 }
