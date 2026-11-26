@@ -6,10 +6,8 @@ package goal12.ActJulieta;
 
 import java.io.File;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -21,7 +19,7 @@ import java.io.BufferedReader;
 /**
  *
  * @author Julieta Marina Sorrentino
- * This is a file to get a file with Place objects from a text file extracted from a excel.
+ * This is a Class only to get a file with Place objects from a text file extracted from a excel.
  * 
  */
 
@@ -35,17 +33,16 @@ public class PlacesConverter {
         
         File f;
   
-        //Getting the information from the .txt file
+        //Getting the information from the .txt file - read
         try{
             f = new File("places.txt");
             
             FileReader fr = new FileReader (f);
-            BufferedReader bReader = new BufferedReader(fr);
+            BufferedReader fReader = new BufferedReader(fr);
             
             String line;
             
-            while ((line = bReader.readLine()) != null){
-                
+            while ((line = fReader.readLine()) != null){
                 
                 String[] info = line.split("\t", -1);
                 //What the -1 does: it's the limit. 
@@ -56,9 +53,10 @@ public class PlacesConverter {
                 fPlaces.add(item);
             }
             
-            bReader.close();
+            fReader.close();
             
             System.out.println(fPlaces.size());
+            //System.out.println(fPlaces.get(400).getName()); check
             JOptionPane.showMessageDialog(null, "Success reading from File: " + f);
         
         }catch(IOException er){
@@ -66,8 +64,26 @@ public class PlacesConverter {
         }
         
         
-        //Convert it to an object file
+        //Convert it to an object file - write 
+
+        File d;
+        FileOutputStream dStream;
+        ObjectOutputStream dOutputStream;
         
+        try{
+          //create obj
+          d = new File("places.dat");
+          dStream = new FileOutputStream(d);
+          dOutputStream = new ObjectOutputStream(dStream);
+          
+          dOutputStream.writeObject(fPlaces);
+          dOutputStream.close();
+          
+          JOptionPane.showMessageDialog(null, "Written to file");
+          
+        }catch(IOException er ){
+            JOptionPane.showMessageDialog(null, "Error writing to file; "+ er);
+        }
         
     
     }

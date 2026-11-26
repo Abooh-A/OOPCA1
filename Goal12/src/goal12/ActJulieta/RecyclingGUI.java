@@ -9,7 +9,11 @@ package goal12.ActJulieta;
  * @author Julieta Marina Sorrentino
  */
 public class RecyclingGUI extends javax.swing.JPanel {
-
+    
+    //List for WASTE TYPES:
+    String[] wasteTypes = { "", "Glass", "Clothes", "Batteries", "Electronics", "DRS Bottles & Cans" };
+    
+    
     /**
      * Creates new form RecyclingGUI
      */
@@ -17,8 +21,19 @@ public class RecyclingGUI extends javax.swing.JPanel {
         initComponents();
         setSize(750,700);
         
+        //Panels that need to be hidden:
+        drsPanel.setVisible(false);
+        
         
         //clear the fields
+        
+       
+        
+        //Adding WASTE TYPES
+        for(int i = 0; i < wasteTypes.length; i++){
+            typeWasteCB.addItem(wasteTypes[i]);
+        }
+        
     }
 
     /**
@@ -39,17 +54,12 @@ public class RecyclingGUI extends javax.swing.JPanel {
         wasteTypeLBL = new javax.swing.JLabel();
         displayArea = new javax.swing.JScrollPane();
         displayListLST = new javax.swing.JList<>();
-        addBTN = new javax.swing.JButton();
         modifyBTN = new javax.swing.JButton();
         deleteBTN = new javax.swing.JButton();
-        cleanBTN = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         searchTF = new javax.swing.JTextField();
-        selectPlaceLBL = new javax.swing.JLabel();
         subtitleRecyclingLBL = new javax.swing.JLabel();
-        tablePlacesArea = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         allBTN = new javax.swing.JButton();
         searchBTN1 = new javax.swing.JButton();
         drsPanel = new javax.swing.JPanel();
@@ -60,6 +70,12 @@ public class RecyclingGUI extends javax.swing.JPanel {
         calculateDepositBTN = new javax.swing.JButton();
         qOverSP = new javax.swing.JSpinner();
         resultLessHalfLitreLBL = new javax.swing.JLabel();
+        searchPlacesPanel = new javax.swing.JPanel();
+        selectPlaceLBL = new javax.swing.JLabel();
+        tablePlacesArea = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        addBTN = new javax.swing.JButton();
+        cleanBTN = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,7 +103,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
 
         rTitleLBL.setText("Add items to your Recycling list:");
 
-        typeWasteCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Glass", "Clothes", "Batteries", "Electronics", "DRS Bottles & Cans" }));
+        typeWasteCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
         typeWasteCB.addActionListener(this::typeWasteCBActionPerformed);
 
         saveFileBTN.setText("Save List as File");
@@ -103,37 +119,17 @@ public class RecyclingGUI extends javax.swing.JPanel {
         });
         displayArea.setViewportView(displayListLST);
 
-        addBTN.setText("ADD to your LIST");
-        addBTN.addActionListener(this::addBTNActionPerformed);
-
         modifyBTN.setText("Modify");
 
         deleteBTN.setText("Delete");
         deleteBTN.addActionListener(this::deleteBTNActionPerformed);
 
-        cleanBTN.setText("Clean Item");
-
         searchTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        selectPlaceLBL.setText("Select Place");
 
         subtitleRecyclingLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         subtitleRecyclingLBL.setForeground(new java.awt.Color(162, 126, 234));
         subtitleRecyclingLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subtitleRecyclingLBL.setText("RECYCLING TODO");
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "District", "Type", "Name", "Information", "Address"
-            }
-        ));
-        tablePlacesArea.setViewportView(jTable2);
 
         allBTN.setText("All");
 
@@ -195,6 +191,55 @@ public class RecyclingGUI extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        selectPlaceLBL.setText("Select Place");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "District", "Type", "Name", "Information", "Address"
+            }
+        ));
+        tablePlacesArea.setViewportView(jTable2);
+
+        addBTN.setText("ADD to your LIST");
+        addBTN.addActionListener(this::addBTNActionPerformed);
+
+        cleanBTN.setText("Clean Item");
+
+        javax.swing.GroupLayout searchPlacesPanelLayout = new javax.swing.GroupLayout(searchPlacesPanel);
+        searchPlacesPanel.setLayout(searchPlacesPanelLayout);
+        searchPlacesPanelLayout.setHorizontalGroup(
+            searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchPlacesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tablePlacesArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPlacesPanelLayout.createSequentialGroup()
+                        .addComponent(cleanBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        searchPlacesPanelLayout.setVerticalGroup(
+            searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchPlacesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(selectPlaceLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cleanBTN))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,14 +258,9 @@ public class RecyclingGUI extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(wasteTypeLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(typeWasteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tablePlacesArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(cleanBTN)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(drsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(typeWasteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(drsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(searchPlacesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -279,13 +319,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(selectPlaceLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cleanBTN))
+                        .addComponent(searchPlacesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(72, 72, 72))))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -296,6 +330,32 @@ public class RecyclingGUI extends javax.swing.JPanel {
 
     private void typeWasteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeWasteCBActionPerformed
         // TODO add your handling code here:
+        int opt = typeWasteCB.getSelectedIndex();
+        
+        if(opt!=5){
+            //hide all the other ones:
+            drsPanel.setVisible(false);
+        }
+        
+        switch(opt){
+            case 1: //GLASS (1)
+
+                break;
+            case 2: //CLOTHES (2)
+
+                break;
+            case 3, 4: //BATTERIES && ELECTRONICS (3)
+                break;
+            case 5: //DRS BOTTLES/CANS (4)
+                drsPanel.setVisible(true);
+                break;
+            
+            default:
+
+                break;
+        }
+  
+        
     }//GEN-LAST:event_typeWasteCBActionPerformed
 
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
@@ -352,6 +412,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
     private javax.swing.JLabel resultOverHalfLitreLBL;
     private javax.swing.JButton saveFileBTN;
     private javax.swing.JButton searchBTN1;
+    private javax.swing.JPanel searchPlacesPanel;
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel selectPlaceLBL;
     private javax.swing.JLabel subtitleRecyclingLBL;

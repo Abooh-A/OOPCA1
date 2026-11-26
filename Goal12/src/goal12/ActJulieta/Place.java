@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public class Place implements Serializable {
     private String name, address, placeType, district, info, link;
@@ -49,8 +49,7 @@ public class Place implements Serializable {
         return link;
     }
     
-    
-    
-    //
+      
+    //code getDetails 
     
 }

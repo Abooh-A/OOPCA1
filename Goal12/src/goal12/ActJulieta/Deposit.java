@@ -28,7 +28,6 @@ public class Deposit extends Recycle implements SavingInterface{
         this.qOver = qOver;
         //add the super? 
     }
-
     
     //SETTERS
 
@@ -46,8 +45,6 @@ public class Deposit extends Recycle implements SavingInterface{
     public double getDepositOver() {
         return depositOver;
     }
-    
-    
     
     
     //from Interface
