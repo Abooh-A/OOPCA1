@@ -205,6 +205,7 @@ public class LogGUI extends javax.swing.JFrame {
         headBTNPNL = new javax.swing.JPanel();
         logNavBTN = new javax.swing.JButton();
         benchmarkNavBTN = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         bodyPNL = new javax.swing.JPanel();
         formPNL = new javax.swing.JPanel();
         categoryJL = new javax.swing.JLabel();
@@ -244,9 +245,9 @@ public class LogGUI extends javax.swing.JFrame {
         headPNL.setLayout(new java.awt.BorderLayout());
 
         titleJL.setBackground(new java.awt.Color(255, 255, 255));
-        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleJL.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
         titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("TRACK | LOG ITEMS");
+        titleJL.setText("TRACK - LOG");
         headPNL.add(titleJL, java.awt.BorderLayout.WEST);
 
         headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
@@ -262,7 +263,12 @@ public class LogGUI extends javax.swing.JFrame {
 
         headPNL.add(headBTNPNL, java.awt.BorderLayout.EAST);
 
-        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
+        topPNL.add(headPNL, java.awt.BorderLayout.SOUTH);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("EESHA PENKEY");
+        topPNL.add(jLabel2, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
 
@@ -458,6 +464,7 @@ public class LogGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> itemTypeCB;
     private javax.swing.JLabel itemTypeJL;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton logNavBTN;
     private javax.swing.JTable logTBL;
     private goal12.Navbar navbar1;

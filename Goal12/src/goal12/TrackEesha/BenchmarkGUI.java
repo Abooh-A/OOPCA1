@@ -74,6 +74,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         headBTNPNL = new javax.swing.JPanel();
         logNavBTN = new javax.swing.JButton();
         benchmarkNavBTN = new javax.swing.JButton();
+        nameLB = new javax.swing.JLabel();
         bodyPNL = new javax.swing.JPanel();
         formPNL = new javax.swing.JPanel();
         householdSizeJL = new javax.swing.JLabel();
@@ -92,12 +93,12 @@ public class BenchmarkGUI extends javax.swing.JFrame {
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
         headPNL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        headPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        headPNL.setLayout(new java.awt.BorderLayout());
 
-        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleJL.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
         titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("Track | Household benchmark");
-        headPNL.add(titleJL);
+        titleJL.setText("TRACK - BENCHMARK");
+        headPNL.add(titleJL, java.awt.BorderLayout.WEST);
 
         headBTNPNL.setBackground(new java.awt.Color(0, 102, 0));
         headBTNPNL.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
@@ -110,9 +111,14 @@ public class BenchmarkGUI extends javax.swing.JFrame {
         benchmarkNavBTN.addActionListener(this::benchmarkNavBTNActionPerformed);
         headBTNPNL.add(benchmarkNavBTN);
 
-        headPNL.add(headBTNPNL);
+        headPNL.add(headBTNPNL, java.awt.BorderLayout.EAST);
 
-        topPNL.add(headPNL, java.awt.BorderLayout.CENTER);
+        topPNL.add(headPNL, java.awt.BorderLayout.SOUTH);
+
+        nameLB.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        nameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameLB.setText("EESHA PENKEY");
+        topPNL.add(nameLB, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
 
@@ -203,6 +209,7 @@ public class BenchmarkGUI extends javax.swing.JFrame {
     private javax.swing.JLabel householdSizeJL;
     private javax.swing.JSpinner householdSizeSP;
     private javax.swing.JButton logNavBTN;
+    private javax.swing.JLabel nameLB;
     private goal12.Navbar navbar1;
     private javax.swing.JTextArea resultTA;
     private javax.swing.JScrollPane scrollPN;
