@@ -4,6 +4,11 @@
  */
 package goal12.ActJulieta;
 
+import java.awt.Component;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Julieta Marina Sorrentino
@@ -11,9 +16,11 @@ package goal12.ActJulieta;
 public class RecyclingGUI extends javax.swing.JPanel {
     
     //List for WASTE TYPES:
-    String[] wasteTypes = { "", "Glass", "Clothes", "Batteries", "Electronics", "DRS Bottles & Cans" };
+    private String[] wasteTypes = { "", "Glass", "Clothes", "Batteries", "Electronics", "DRS Bottles & Cans" };
     
-    
+    //User Information will be stored in;
+    public User userInfo;
+            
     /**
      * Creates new form RecyclingGUI
      */
@@ -23,18 +30,68 @@ public class RecyclingGUI extends javax.swing.JPanel {
         
         //Panels that need to be hidden:
         drsPanel.setVisible(false);
-        
+        searchPlacesPanel.setVisible(false);
         
         //clear the fields
-        
-       
-        
+
         //Adding WASTE TYPES
         for(int i = 0; i < wasteTypes.length; i++){
             typeWasteCB.addItem(wasteTypes[i]);
         }
         
+        //List: 
+        for (Component c : listDisplayPanel.getComponents()) {
+            c.setEnabled(false);
+        }
+        listMsgLBL.setText("To create your Recycling List, please register");
+        addBTN.setEnabled(false);
+       
+        
     }
+    
+    
+    
+    //METHODS:
+    
+    //SETTER To get the User Information
+    public void setUserInfo(User userInfo){
+        this.userInfo = userInfo;
+        //System.out.println(this.userInfo.getName());
+    }
+    
+    //Make List available:
+    public void listAvailable(){
+        
+        LocalDate dateList = LocalDate.now();
+        String nameList = userInfo.getName();
+        
+        for (Component c : listDisplayPanel.getComponents()) {
+            c.setEnabled(true);
+        }
+        addBTN.setEnabled(true);
+        
+        listMsgLBL.setVisible(false);
+        listTitleTF.setText(nameList + "_" + dateList);
+    }
+    
+    
+    //Display Result in the table
+    private void displayResultPlaces(ArrayList<Place> result){
+
+        DefaultTableModel model = (DefaultTableModel) placesDisplayTBL.getModel();
+        model.setRowCount(0);
+        
+        //(String name, String address, String placeType, String district, String info, String link)
+        for(Place p: result){
+            model.addRow(new Object[]{ p.getName(), p.getAddress(), p.getPlaceType(), p.getDistrict(), p.getInfo(), p.getLink() });
+        }
+        
+        if(result.isEmpty()){ // change this
+            System.out.println("No results found");
+        }
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,18 +107,9 @@ public class RecyclingGUI extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         rTitleLBL = new javax.swing.JLabel();
         typeWasteCB = new javax.swing.JComboBox<>();
-        saveFileBTN = new javax.swing.JButton();
         wasteTypeLBL = new javax.swing.JLabel();
-        displayArea = new javax.swing.JScrollPane();
-        displayListLST = new javax.swing.JList<>();
-        modifyBTN = new javax.swing.JButton();
-        deleteBTN = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        searchTF = new javax.swing.JTextField();
         subtitleRecyclingLBL = new javax.swing.JLabel();
-        allBTN = new javax.swing.JButton();
-        searchBTN1 = new javax.swing.JButton();
         drsPanel = new javax.swing.JPanel();
         resultOverHalfLitreLBL = new javax.swing.JLabel();
         qLessSP = new javax.swing.JSpinner();
@@ -71,11 +119,28 @@ public class RecyclingGUI extends javax.swing.JPanel {
         qOverSP = new javax.swing.JSpinner();
         resultLessHalfLitreLBL = new javax.swing.JLabel();
         searchPlacesPanel = new javax.swing.JPanel();
+        jSeparator2 = new javax.swing.JSeparator();
         selectPlaceLBL = new javax.swing.JLabel();
         tablePlacesArea = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        placesDisplayTBL = new javax.swing.JTable();
         addBTN = new javax.swing.JButton();
         cleanBTN = new javax.swing.JButton();
+        allDistrictSearchBTN = new javax.swing.JButton();
+        userDistrictSearchBTN = new javax.swing.JButton();
+        listDisplayPanel = new javax.swing.JPanel();
+        listTitleTF = new javax.swing.JTextField();
+        searchTF = new javax.swing.JTextField();
+        searchBTN1 = new javax.swing.JButton();
+        allBTN = new javax.swing.JButton();
+        displayArea = new javax.swing.JScrollPane();
+        displayListLST = new javax.swing.JList<>();
+        modifyBTN = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
+        saveListBTN = new javax.swing.JButton();
+        downloadFileBTN = new javax.swing.JButton();
+        displayArea1 = new javax.swing.JScrollPane();
+        displayListLST1 = new javax.swing.JList<>();
+        listMsgLBL = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -106,34 +171,12 @@ public class RecyclingGUI extends javax.swing.JPanel {
         typeWasteCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
         typeWasteCB.addActionListener(this::typeWasteCBActionPerformed);
 
-        saveFileBTN.setText("Save List as File");
-        saveFileBTN.addActionListener(this::saveFileBTNActionPerformed);
-
         wasteTypeLBL.setText("Type of Waste");
-
-        displayListLST.setBorder(null);
-        displayListLST.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        displayArea.setViewportView(displayListLST);
-
-        modifyBTN.setText("Modify");
-
-        deleteBTN.setText("Delete");
-        deleteBTN.addActionListener(this::deleteBTNActionPerformed);
-
-        searchTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         subtitleRecyclingLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         subtitleRecyclingLBL.setForeground(new java.awt.Color(162, 126, 234));
         subtitleRecyclingLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subtitleRecyclingLBL.setText("RECYCLING TODO");
-
-        allBTN.setText("All");
-
-        searchBTN1.setText("Search");
 
         resultOverHalfLitreLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         resultOverHalfLitreLBL.setText("= *Result Deposit*");
@@ -174,9 +217,10 @@ public class RecyclingGUI extends javax.swing.JPanel {
         );
         drsPanelLayout.setVerticalGroup(
             drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(drsPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, drsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(calculateDepositBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(drsPanelLayout.createSequentialGroup()
                         .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(qLessSP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,59 +230,169 @@ public class RecyclingGUI extends javax.swing.JPanel {
                         .addGroup(drsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(qOverSP, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                             .addComponent(qOverLBL)
-                            .addComponent(resultOverHalfLitreLBL)))
-                    .addComponent(calculateDepositBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(resultOverHalfLitreLBL))))
                 .addContainerGap())
         );
 
-        selectPlaceLBL.setText("Select Place");
+        selectPlaceLBL.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        selectPlaceLBL.setText("Select Place:");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        placesDisplayTBL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "District", "Type", "Name", "Information", "Address"
+                "Name", "Address", "Type", "District", "Info", "Link"
             }
-        ));
-        tablePlacesArea.setViewportView(jTable2);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablePlacesArea.setViewportView(placesDisplayTBL);
 
         addBTN.setText("ADD to your LIST");
         addBTN.addActionListener(this::addBTNActionPerformed);
 
         cleanBTN.setText("Clean Item");
 
+        allDistrictSearchBTN.setText("All Districts");
+
+        userDistrictSearchBTN.setText("Your District");
+
         javax.swing.GroupLayout searchPlacesPanelLayout = new javax.swing.GroupLayout(searchPlacesPanel);
         searchPlacesPanel.setLayout(searchPlacesPanelLayout);
         searchPlacesPanelLayout.setHorizontalGroup(
             searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2)
             .addGroup(searchPlacesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablePlacesArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPlacesPanelLayout.createSequentialGroup()
+                .addGroup(searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tablePlacesArea, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                    .addGroup(searchPlacesPanelLayout.createSequentialGroup()
                         .addComponent(cleanBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(searchPlacesPanelLayout.createSequentialGroup()
+                        .addComponent(selectPlaceLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(userDistrictSearchBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(allDistrictSearchBTN)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         searchPlacesPanelLayout.setVerticalGroup(
             searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchPlacesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(selectPlaceLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(selectPlaceLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(allDistrictSearchBTN)
+                    .addComponent(userDistrictSearchBTN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tablePlacesArea, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addGroup(searchPlacesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cleanBTN))
                 .addContainerGap())
         );
+
+        listTitleTF.setBackground(new java.awt.Color(242, 242, 242));
+        listTitleTF.setText("MyList");
+        listTitleTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        listTitleTF.addActionListener(this::listTitleTFActionPerformed);
+
+        searchTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        searchBTN1.setText("Search");
+
+        allBTN.setText("All");
+
+        displayListLST.setBorder(null);
+        displayListLST.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        displayArea.setViewportView(displayListLST);
+
+        modifyBTN.setText("Modify");
+
+        deleteBTN.setText("Delete");
+        deleteBTN.addActionListener(this::deleteBTNActionPerformed);
+
+        saveListBTN.setText("Save List");
+
+        downloadFileBTN.setText("Download as a File");
+        downloadFileBTN.addActionListener(this::downloadFileBTNActionPerformed);
+
+        displayListLST1.setBorder(null);
+        displayListLST1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        displayArea1.setViewportView(displayListLST1);
+
+        javax.swing.GroupLayout listDisplayPanelLayout = new javax.swing.GroupLayout(listDisplayPanel);
+        listDisplayPanel.setLayout(listDisplayPanelLayout);
+        listDisplayPanelLayout.setHorizontalGroup(
+            listDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listDisplayPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(listDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listDisplayPanelLayout.createSequentialGroup()
+                        .addComponent(modifyBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saveListBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(displayArea, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listDisplayPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(downloadFileBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(listDisplayPanelLayout.createSequentialGroup()
+                        .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchBTN1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(allBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(listTitleTF))
+                .addContainerGap())
+        );
+        listDisplayPanelLayout.setVerticalGroup(
+            listDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listDisplayPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(listTitleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(listDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(searchBTN1)
+                    .addComponent(allBTN)
+                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(displayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(listDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(listDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(modifyBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(saveListBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(downloadFileBTN)
+                .addContainerGap())
+        );
+
+        listMsgLBL.setFont(new java.awt.Font("Helvetica Neue", 2, 12)); // NOI18N
+        listMsgLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        listMsgLBL.setText("List msg");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -247,42 +401,32 @@ public class RecyclingGUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addComponent(jSeparator2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(rTitleLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(70, 70, 70))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(wasteTypeLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(typeWasteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(drsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(searchPlacesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(saveFileBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(subtitleRecyclingLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchBTN1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(allBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(modifyBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deleteBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
-                    .addComponent(displayArea, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(subtitleRecyclingLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(rTitleLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(76, 76, 76))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(wasteTypeLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(typeWasteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(drsPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(searchPlacesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(listDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(listMsgLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,68 +434,90 @@ public class RecyclingGUI extends javax.swing.JPanel {
                 .addGap(5, 5, 5)
                 .addComponent(subtitleRecyclingLBL)
                 .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rTitleLBL)
+                    .addComponent(listMsgLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(searchBTN1)
-                            .addComponent(allBTN)
-                            .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(displayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modifyBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(saveFileBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(rTitleLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(typeWasteCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(wasteTypeLBL))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(drsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(drsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchPlacesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(72, 72, 72))))
+                        .addGap(72, 72, 72))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(listDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(148, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void saveFileBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileBTNActionPerformed
+    private void downloadFileBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadFileBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_saveFileBTNActionPerformed
+    }//GEN-LAST:event_downloadFileBTNActionPerformed
 
     private void typeWasteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeWasteCBActionPerformed
         // TODO add your handling code here:
+        ArrayList<Place> resultSearch; 
+        ArrayList<String> typesP = new ArrayList<>();
+        
         int opt = typeWasteCB.getSelectedIndex();
         
-        if(opt!=5){
-            //hide all the other ones:
+        
+        if(opt!=5){ // hidden pannels 
             drsPanel.setVisible(false);
         }
         
+        //Depending on the waste type choosen:
         switch(opt){
             case 1: //GLASS (1)
+                typesP.add("glass");
+                
+                if(userInfo != null){
+                    
+                    if(!userInfo.getDistrict().equals("0")){
+                        searchPlacesPanel.setVisible(true);
+                        
+                        resultSearch = PlaceList.getInstance().searchPlaces(typesP, userInfo.getDistrict());
+                        displayResultPlaces(resultSearch);
+                    }else{
+                        //resultSearch = PlaceList.getInstance().searchPlaces(typesP);
+                        //displayResultPlaces(resultSearch);
+                    
+                        //General Info
+                        //add the info somewhere and show it here.
+                    }
+                    
+                }else{
+                    searchPlacesPanel.setVisible(true);
+                    
+                    resultSearch = PlaceList.getInstance().searchPlaces(typesP);
+                    displayResultPlaces(resultSearch);
+                }
+                
 
                 break;
-            case 2: //CLOTHES (2)
+                
+            case 2: //CLOTHES (2) oxfam_shop and oxfam_bank
+                
 
                 break;
-            case 3, 4: //BATTERIES && ELECTRONICS (3)
+                
+            case 3, 4: //BATTERIES && ELECTRONICS (3) electronics
+                
+                
                 break;
+                
             case 5: //DRS BOTTLES/CANS (4)
                 drsPanel.setVisible(true);
+                searchPlacesPanel.setVisible(false);
                 break;
             
             default:
-
                 break;
         }
   
@@ -384,25 +550,44 @@ public class RecyclingGUI extends javax.swing.JPanel {
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
+        
+        Recycle tempR = new Recycle();
+        
+        tempR.setWasteType(typeWasteCB.getItemAt(typeWasteCB.getSelectedIndex()));
+        tempR.setPlace(placesDisplayTBL.getSelectedRow());
+        
+        System.out.println(tempR.getPlace());
+        
     }//GEN-LAST:event_addBTNActionPerformed
+
+    private void listTitleTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listTitleTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listTitleTFActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
     private javax.swing.JButton allBTN;
+    private javax.swing.JButton allDistrictSearchBTN;
     private javax.swing.JButton calculateDepositBTN;
     private javax.swing.JButton cleanBTN;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JScrollPane displayArea;
+    private javax.swing.JScrollPane displayArea1;
     private javax.swing.JList<String> displayListLST;
+    private javax.swing.JList<String> displayListLST1;
+    private javax.swing.JButton downloadFileBTN;
     private javax.swing.JPanel drsPanel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JPanel listDisplayPanel;
+    private javax.swing.JLabel listMsgLBL;
+    private javax.swing.JTextField listTitleTF;
     private javax.swing.JButton modifyBTN;
+    private javax.swing.JTable placesDisplayTBL;
     private javax.swing.JLabel qLessLBL;
     private javax.swing.JSpinner qLessSP;
     private javax.swing.JLabel qOverLBL;
@@ -410,7 +595,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
     private javax.swing.JLabel rTitleLBL;
     private javax.swing.JLabel resultLessHalfLitreLBL;
     private javax.swing.JLabel resultOverHalfLitreLBL;
-    private javax.swing.JButton saveFileBTN;
+    private javax.swing.JButton saveListBTN;
     private javax.swing.JButton searchBTN1;
     private javax.swing.JPanel searchPlacesPanel;
     private javax.swing.JTextField searchTF;
@@ -418,6 +603,7 @@ public class RecyclingGUI extends javax.swing.JPanel {
     private javax.swing.JLabel subtitleRecyclingLBL;
     private javax.swing.JScrollPane tablePlacesArea;
     private javax.swing.JComboBox<String> typeWasteCB;
+    private javax.swing.JButton userDistrictSearchBTN;
     private javax.swing.JLabel wasteTypeLBL;
     // End of variables declaration//GEN-END:variables
 }

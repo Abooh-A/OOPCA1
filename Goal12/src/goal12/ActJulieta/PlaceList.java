@@ -12,12 +12,11 @@ import java.util.ArrayList;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public final class PlaceList{ //Singleton Class
     //data members
     private ArrayList<Place> placesArrayList;
-    private ArrayList<Place> resultSearchPlaces;
 
     
     //CONSTRUCTORS 
@@ -53,14 +52,36 @@ public final class PlaceList{ //Singleton Class
     public static PlaceList getInstance(){
         return INSTANCE;
     }
-    
-    
+
     // Other Methods
-    //SEARCH:
-    public void searchPlaces(String typePlace, String district){
+    //SEARCH: typePlace and district, typePlace
+    public ArrayList<Place> searchPlaces(ArrayList<String> typePlace, String district) {
+        
+        ArrayList<Place> resultSearch = new ArrayList<>();
+        
+        for (Place p: placesArrayList){
+            if(typePlace.contains(p.getPlaceType()) && p.getDistrict().equals(district)){
+                resultSearch.add(p);
+            }
+        } // end for loop
+        
+        return resultSearch;
+    } // searchPlaces by typePlace and district
     
     
-    }
+    public ArrayList<Place> searchPlaces(ArrayList<String> typePlace) {
+        
+        ArrayList<Place> resultSearch = new ArrayList<>();
+        
+        for (Place p: placesArrayList){
+            if(typePlace.contains(p.getPlaceType())){
+                resultSearch.add(p);
+            }
+        } // end for loop
+        
+        return resultSearch;
+    } // searchPlaces by typePlace and district
+
     
-    
+        
 }

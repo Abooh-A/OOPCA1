@@ -6,7 +6,7 @@ package goal12.ActJulieta;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public class GoSustainableGUI extends javax.swing.JPanel {
 
@@ -19,7 +19,16 @@ public class GoSustainableGUI extends javax.swing.JPanel {
         initComponents();
         setSize(750,700);
        
-        //
+
+        //clear the fields
+        
+        //Coffee panel hide
+        coffeePanel.setVisible(false);
+        
+        //Adding WASTE TYPES
+        for(int i = 0; i < ideas.length; i++){
+            ideasCB.addItem(ideas[i]);
+        }
         
     }
 
@@ -72,6 +81,7 @@ public class GoSustainableGUI extends javax.swing.JPanel {
         ideasCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
         ideasCB.setPreferredSize(null);
         ideasCB.setRequestFocusEnabled(false);
+        ideasCB.addActionListener(this::ideasCBActionPerformed);
 
         optionsCoffeeDiscountGRB.setBorder(null);
 
@@ -177,7 +187,7 @@ public class GoSustainableGUI extends javax.swing.JPanel {
                             .addComponent(avgPriceTF))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coffeePanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(coffeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(errorMsgCoffeeLBL)
                     .addComponent(calculateSavingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,8 +227,8 @@ public class GoSustainableGUI extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ideaLBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coffeePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tablePlacesArea, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
@@ -321,6 +331,38 @@ public class GoSustainableGUI extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_calculateSavingBTNActionPerformed
+
+    private void ideasCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ideasCBActionPerformed
+        // TODO add your handling code here:
+        
+        int opt = ideasCB.getSelectedIndex();
+        
+        if(opt!=1){ // hidden pannels 
+            coffeePanel.setVisible(false);
+        }
+        
+        switch(opt){
+            case 1: //COFFEE (1)
+                coffeePanel.setVisible(true);
+                break;
+            case 2: //WATER (2)
+
+                break;
+            case 3: //FOOD (3)
+                break;
+                
+            case 4: //BOOK (4)
+                break;
+            case 5: //CLOTHES (5)
+                break;
+            
+            default:
+                break;
+        }
+  
+        
+        
+    }//GEN-LAST:event_ideasCBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

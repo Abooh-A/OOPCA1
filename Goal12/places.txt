@@ -79,7 +79,7 @@ Dublin Food Co-op	"Unit 1, Building 1, The Old Chocolate Factory, Kilmainham Squ
 Rediscovery Centre	"The Boiler House, Ballymun Road, Dublin 9 D09 HK58,"	shop_refill	D09		https://www.rediscoverycentre.ie/
 Small Changes	"120 Emmet Rd, Inchicore, Dublin 8, D08 Y962"	shop_refill	D08		https://www.instagram.com/smallchanges.ie/
 Nutty Delights	"8 Georges Street Arcade, South Great George's Street, Dublin 2, Ireland"	shop_refill	D02		https://www.nuttydelights.ie/
-IFSC Ð Custom House Square		glass	D01		
+IFSC  Custom House Square		glass	D01		
 North Strand Recycling Centre		glass	D01		
 Clontarf 	"Nolans Supermarket carpark, Vernon Avenue"	glass	D03		
 East Wall 	Alfie Byrne Road	glass	D03		

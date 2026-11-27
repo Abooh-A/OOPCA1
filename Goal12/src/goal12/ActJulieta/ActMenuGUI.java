@@ -8,7 +8,7 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author macbook
+ * @author Julieta Marina Sorrentino
  */
 public class ActMenuGUI extends javax.swing.JFrame {
     
@@ -22,7 +22,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
     private String district = "";
     
     //Info Session User - only one 
-    static User myUser;
+    public static User myUser;
     
     /**
      * Creates new form ActMenuGUI
@@ -47,10 +47,6 @@ public class ActMenuGUI extends javax.swing.JFrame {
         
     }
 
-    public static User getMyUser() {
-        return myUser;
-    }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -80,9 +76,11 @@ public class ActMenuGUI extends javax.swing.JFrame {
         userDistrictLBL = new javax.swing.JLabel();
         userNameLBL = new javax.swing.JLabel();
         resetDetailsBTN = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
+        setBounds(new java.awt.Rectangle(0, 30, 0, 0));
 
         recyclingBTN.setText("Recycling-to-do");
         recyclingBTN.addActionListener(this::recyclingBTNActionPerformed);
@@ -222,6 +220,11 @@ public class ActMenuGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(162, 126, 234));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("JULIETA MARINA SORRENTINO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -249,12 +252,15 @@ public class ActMenuGUI extends javax.swing.JFrame {
                 .addGap(245, 245, 245)
                 .addComponent(sessionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(45, 45, 45))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(titleActPNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -266,7 +272,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
                     .addComponent(recyclingBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                     .addComponent(goSustainableBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(scrollArea, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
+                .addComponent(scrollArea, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
         );
 
@@ -334,6 +340,12 @@ public class ActMenuGUI extends javax.swing.JFrame {
                 
                 // make the User Details Panel visible:
                 userDetailsPanel.setVisible(true);
+                
+                //Send the details to the other GUIs
+                recyclingPanel.setUserInfo(myUser);
+                recyclingPanel.listAvailable();
+                //sustainablePanel.setUserInfo(myUser);
+                //add method to 
                 
                 //clean fields:
                 nameTF.setText("");
@@ -404,6 +416,7 @@ public class ActMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel errorMsgEircodeLBL;
     private javax.swing.JLabel errorMsgNameLBL;
     private javax.swing.JButton goSustainableBTN;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nameLBL;
     private javax.swing.JTextField nameTF;
     private goal12.Navbar navbar1;
