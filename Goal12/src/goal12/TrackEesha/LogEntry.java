@@ -24,40 +24,29 @@ public abstract class LogEntry {
         this.date = date;
     }
 
-    public int getId() { return id; }
-    public String getCategory() { return category; }
-    public String getItemType() { return itemType; }
-    public double getWeightKg() { return weightKg; }
-    public LocalDate getDate() { return date; }
-
-    /** Text shown in the status column: "new", "second hand" or "discarded". */
-    public abstract String getStatus();
-
-    /** Material footprint in kg. */
-    public abstract double getFootprintKg();
-
-    /** Waste in kg (only discarded items create waste). */
-    public double getWasteKg() { return 0.0; }
-
-    /** True if the entry is something the user acquired (used for circularity). */
-    public boolean isAcquisition() { return true; }
-
-    /** True if the acquired item was second-hand or repaired. */
-    public boolean isCircular() { return false; }
-
-    /** One line for the data file: TYPE|id|category|itemType|weightKg|date|extra */
-    public abstract String toFileString();
-
-    /** The fields shared by every entry, in file format. */
-    protected String baseFields() {
+    public int getId() { return id; } // get unique id
+    public String getCategory() { return category; } // category per entry
+    public String getItemType() { return itemType; } // specific item type
+    public double getWeightKg() { return weightKg; } // entry weight
+    public LocalDate getDate() { return date; } //associated date
+    public abstract String getStatus(); // Text shown in the status column: "new", "second hand" or "discarded". 
+    public abstract double getFootprintKg(); // Material footprint in kg. 
+    public double getWasteKg() { return 0.0; } //only discarded items create waste
+    public boolean isAcquisition() { return true; } // True if the entry is something the user acquired (used for circularity). 
+    public boolean isCircular() { return false; } // True if the acquired item was second-hand or repaired. 
+    public abstract String toFileString(); //One line for the data file: TYPE|id|category|itemType|weightKg|date|extra 
+    
+    //The fields shared by every entry, in file format. 
+    protected String baseFields() { 
         return id + "|" + clean(category) + "|" + clean(itemType) + "|" + weightKg + "|" + date;
     }
 
-    /** Stops '|' in text from breaking the file format. */
+    //Stops '|' in text from breaking the file format. 
     protected static String clean(String text) {
         return text.replace("|", "/");
     }
-
+    
+    //sumamary
     public String getSummary() {
         return category + " / " + itemType + " - " + getStatus()
                 + String.format(", %.2f kg on %s", weightKg, date);
