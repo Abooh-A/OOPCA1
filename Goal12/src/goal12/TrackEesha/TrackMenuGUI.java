@@ -29,11 +29,13 @@ public class TrackMenuGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         topPNL = new javax.swing.JPanel();
+        navbar1 = new goal12.Navbar();
         headPNL = new javax.swing.JPanel();
         titleJL = new javax.swing.JLabel();
-        navbar1 = new goal12.Navbar();
+        nameLB = new javax.swing.JLabel();
         buttonPNL = new javax.swing.JPanel();
         logBTN = new javax.swing.JButton();
         benchmarkBTN = new javax.swing.JButton();
@@ -41,30 +43,48 @@ public class TrackMenuGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         topPNL.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
+        topPNL.add(navbar1, java.awt.BorderLayout.NORTH);
 
         headPNL.setBackground(new java.awt.Color(0, 102, 0));
         headPNL.setLayout(new java.awt.BorderLayout());
 
-        titleJL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleJL.setFont(new java.awt.Font("Arial", 1, 60)); // NOI18N
         titleJL.setForeground(new java.awt.Color(255, 255, 255));
-        titleJL.setText("Track");
-        headPNL.add(titleJL, java.awt.BorderLayout.WEST);
+        titleJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleJL.setText("TRACK");
+        headPNL.add(titleJL, java.awt.BorderLayout.CENTER);
 
-        navbar1.setBackground(new java.awt.Color(0, 102, 0));
-        headPNL.add(navbar1, java.awt.BorderLayout.EAST);
+        topPNL.add(headPNL, java.awt.BorderLayout.SOUTH);
 
-        getContentPane().add(headPNL, java.awt.BorderLayout.NORTH);
+        nameLB.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        nameLB.setForeground(new java.awt.Color(0, 102, 0));
+        nameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameLB.setText("EESHA PENKEY");
+        topPNL.add(nameLB, java.awt.BorderLayout.CENTER);
 
-        buttonPNL.setLayout(new java.awt.GridLayout(2, 1, 0, 20));
+        getContentPane().add(topPNL, java.awt.BorderLayout.NORTH);
 
+        buttonPNL.setLayout(new java.awt.GridBagLayout());
+
+        logBTN.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         logBTN.setText("Log items");
+        logBTN.setPreferredSize(new java.awt.Dimension(380, 60));
         logBTN.addActionListener(this::logBTNActionPerformed);
-        buttonPNL.add(logBTN);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
+        buttonPNL.add(logBTN, gridBagConstraints);
 
+        benchmarkBTN.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         benchmarkBTN.setText("HouseHold benchmark");
+        benchmarkBTN.setPreferredSize(new java.awt.Dimension(380, 60));
         benchmarkBTN.addActionListener(this::benchmarkBTNActionPerformed);
-        buttonPNL.add(benchmarkBTN);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
+        buttonPNL.add(benchmarkBTN, gridBagConstraints);
 
         getContentPane().add(buttonPNL, java.awt.BorderLayout.CENTER);
 
@@ -109,6 +129,7 @@ public class TrackMenuGUI extends javax.swing.JFrame {
     private javax.swing.JPanel buttonPNL;
     private javax.swing.JPanel headPNL;
     private javax.swing.JButton logBTN;
+    private javax.swing.JLabel nameLB;
     private goal12.Navbar navbar1;
     private javax.swing.JLabel titleJL;
     private javax.swing.JPanel topPNL;
